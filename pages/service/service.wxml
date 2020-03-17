@@ -1,0 +1,40 @@
+<!-- 主盒子 -->
+<view class="page">
+<!-- 搜索框 -->
+  <view class="page__bd">
+    <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+  </view>
+  <!-- 内容框 -->
+  <view class="ServiceContainer">
+  <!-- 左侧边栏 -->
+    <view class="nav_left">    
+      <block wx:for="{{menuItems}}" wx:key="index">
+     <view class="nav_left_items.{{curNav == item.menuId ? 'active' : ''}}" data-index="{{index}}" data-id="{{item.menuId}}" catchtap="switchRightTab">{{item.menuName}}</view>
+        <!--当前项的id等于item项的id，那个就是当前状态-->
+        <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
+
+      </block>    
+    </view>
+
+
+    <!-- 右侧边栏 -->
+    <view class="nav_right">
+      
+      <block wx:for="{{menuItems[curIndex].groups}}" wx:key="index">
+        <view class="nav_right_title">------{{item.group_name}}-------</view>
+        <view>
+        <block   wx:for="{{menuItems[curIndex].groups[index].children}}" wx:key="id">
+        <navigator class="nav_right_items" url="/pages/PM/{{item.child_nav_name}}/{{item.child_nav_name}}">          
+          <image src="{{item.image}}"></image>
+          <text>{{item.child_name}}</text>
+          </navigator>
+        </block>
+        </view>
+      </block>
+    
+    </view>
+  
+  
+  </view>
+
+</view>

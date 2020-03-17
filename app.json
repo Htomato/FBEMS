@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/PM/trainingPlan/trainingPlan",
+    "pages/PM/contacts/contacts",        
+    "pages/service/service",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/my/my",    
+    "pages/PM/trMan/trMan",
+    "pages/PM/traOrgMain/traOrgMain",
+    "pages/PM/traOrgReview/traOrgReview",
+    "pages/PM/eqTech/eqTech",
+    "pages/PM/eqExpert/eqExpert",
+    "pages/PM/eqExpertReview/eqExpertReview",
+    "pages/PM/inspectors/inspectors"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#C9110D",
+    "navigationBarTitleText": "消防队装备管理系统",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/icon_bar/index.png",
+        "selectedIconPath": "/images/icon_bar/indexLight.png"
+      },
+      {
+        "pagePath": "pages/service/service",
+        "text": "服务",
+        "iconPath": "/images/icon_bar/service.png",
+        "selectedIconPath": "/images/icon_bar/serviceLight.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我",
+        "iconPath": "/images/icon_bar/my.png",
+        "selectedIconPath": "/images/icon_bar/myLight.png"
+      }
+    ],
+    "selectedColor": "#4f68b0"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,26 @@
+/* pages/PM/contacts/contacts.wxss */
+.contact{
+  display: flex;
+  border-bottom: 1px solid #dedede;
+  margin-top: 10rpx;
+  align-items: center;
+}
+.avatar{
+  height: 48px;
+  width: 48px;
+}
+.contact_name{
+  margin-left: 10rpx;
+  margin-right: 55rpx;
+  font-size: 40rpx;
+  widows: 100px;
+}
+.key{  
+  font-size: 28rpx;
+  color: #9b9b9b;
+}
+.value{
+  font-size: 34rpx;
+  color: #535353;
+  margin-right: 30rpx;
+}

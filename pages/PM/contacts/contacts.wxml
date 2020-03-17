@@ -1,0 +1,14 @@
+<!--pages/PM/contacts/contacts.wxml-->
+<view>
+  <view>
+    <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+  </view>
+  <view class="contact">
+    <image src="/images/avatar/1.jpg" class="avatar"></image>
+    <text class="contact_name">余俊德</text>
+    <text class="key">职务：</text>
+    <text class="value">质检员</text>
+    <text class="key">单位：</text>
+    <text class="value">消防一队</text>
+  </view>
+</view>
