@@ -1,12 +1,13 @@
 /* pages/PM/trainingPlan/trainingPlan.wxss */
 page{
   display: flex;
-
+  flex-direction: column;
+  background-color: #f8f8f8;
 }
 
 .formContainer{
   width: 100%;
-  background-color: #f8f8f8;
+  
 }
 .formItems{
   margin-top: 40rpx;
@@ -41,4 +42,42 @@ picker{
 .button{
   display: flex;
   flex-direction: row;
+  margin-bottom: 20rpx; 
+}
+
+/* 表格 */
+
+.table {
+  border: 0px solid darkgray;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+.td {
+    width:40%;
+    justify-content: center;
+    text-align: center;    
+}
+.value{
+  font-weight: 700;
+  color: blue;
+}
+.bg-w{
+  background: snow;
+}
+.bg-g{
+  background: #E6F3F9;
+}
+.th {
+  width: 40%;
+  justify-content: center;
+  background: #3366FF;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
 }

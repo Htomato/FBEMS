@@ -1,27 +1,48 @@
 <!--pages/PM/trainingPlan/trainingPlan.wxml-->
+<view class="Container">
 <view class="formContainer">
-  <form bindsubmit="formSubmit" bindreset="formReset">
-    <view class="formItems">
-    <view class="selectItems">
-      <view>
-        <text>方案编号</text>
-        <input type="text" name="number" placeholder="例如：001"></input>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="formItems">
+      <view class="selectItems">
+        <view>
+          <text>方案编号</text>
+          <input type="text" name="number" placeholder="例如：001"></input>
+        </view>
+        <view>
+          <text>培训机构</text>
+          <input type="text" name="name" placeholder="例如：锐顿"></input>
+        </view>
+        <view>
+          <text>培训类别</text>
+          <picker bindchange="pickerChange"  name="selectValue" value="{{index}}"  range="{{objectArray}}" range-key="{{'name'}}">
+          <view>{{objectArray[index].name}}</view>
+          </picker>
+        </view>
+        </view>  
       </view>
-      <view>
-        <text>培训机构</text>
-        <input type="text" name="name" placeholder="例如：锐顿"></input>
+      <view class="button">
+        <button  form-type="reset"  style="background-color: #939393">清除</button>
+        <button  form-type="submit" style="background-color: #8DE">查询</button>
       </view>
-      <view>
-        <text>培训类别</text>
-        <picker bindchange="pickerChange"  name="selectValue" value="{{index}}"  range="{{objectArray}}" range-key="{{'name'}}">
-        <view>{{objectArray[index].name}}</view>
-        </picker>
-      </view>
-      </view>  
+    </form>
+</view>
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">方案编号</view>
+    <view class="th">培训机构</view>
+    <view class="th">培训类别</view>
+  </view>
+  <block wx:for="{{listData}}" wx:key="code">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.code}}</view>
+      <view class="td">{{item.text}}</view>
+      <view class="td value">{{item.type}}</view>
     </view>
-    <view class="button">
-      <button  form-type="reset"  style="background-color: #939393">清除</button>
-      <button  form-type="submit" style="background-color: #8DE">查询</button>
+    <view class="tr" wx:else>
+      <view class="td">{{item.code}}</view>
+      <view class="td">{{item.text}}</view>
+      <view class="td value">{{item.type}}</view>
     </view>
-  </form>
+  </block>
+</view>
 </view>

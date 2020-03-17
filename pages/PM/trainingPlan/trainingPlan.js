@@ -23,7 +23,16 @@ Page({
         name: '日本'
       }
     ],
-    index: 0
+    index: 0,
+    listData:[
+      {"code":"01","text":"利钝","type":"体能"},
+      {"code":"02","text":"消强","type":"业务"},
+      {"code":"03","text":"text3","type":"type3"},
+      {"code":"04","text":"text4","type":"type4"},
+      {"code":"05","text":"text5","type":"type5"},
+      {"code":"06","text":"text6","type":"type6"},
+      {"code":"07","text":"text7","type":"type7"}
+    ]
 
   },
   formSubmit: function (e) {
