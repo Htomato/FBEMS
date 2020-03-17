@@ -20,8 +20,8 @@
       </view>  
     </view>
     <view class="button">
-      <button form-type="reset">清除</button>
-      <button  form-type="submit">查询</button>
+      <button  form-type="reset"  style="background-color: #939393">清除</button>
+      <button  form-type="submit" style="background-color: #8DE">查询</button>
     </view>
   </form>
 </view>
