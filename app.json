@@ -1,18 +1,19 @@
 {
   "pages": [
     "pages/PM/trainingPlan/trainingPlan",
-    "pages/PM/contacts/contacts",        
+    "pages/PM/contacts/contacts",
     "pages/service/service",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/my/my",    
+    "pages/my/my",
     "pages/PM/trMan/trMan",
     "pages/PM/traOrgMain/traOrgMain",
     "pages/PM/traOrgReview/traOrgReview",
     "pages/PM/eqTech/eqTech",
     "pages/PM/eqExpert/eqExpert",
     "pages/PM/eqExpertReview/eqExpertReview",
-    "pages/PM/inspectors/inspectors"
+    "pages/PM/inspectors/inspectors",
+    "pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

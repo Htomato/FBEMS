@@ -36,12 +36,16 @@
     <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
       <view class="td">{{item.code}}</view>
       <view class="td">{{item.text}}</view>
-      <view class="td value">{{item.type}}</view>
+      <view class="td value">
+        <navigator url="/pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail?title={{item.type}}">{{item.type}}</navigator>
+      </view>
     </view>
     <view class="tr" wx:else>
       <view class="td">{{item.code}}</view>
       <view class="td">{{item.text}}</view>
-      <view class="td value">{{item.type}}</view>
+      <view class="td value">
+        <navigator url="/pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail?title={{item.type}}" hover-class="navigator-hover">{{item.type}}</navigator>
+      </view>
     </view>
   </block>
 </view>

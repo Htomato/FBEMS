@@ -1,0 +1,3 @@
+<!--pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail.wxml-->
+<text>pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail.wxml</text>
+<view>{{title}}</view>
