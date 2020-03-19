@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/PM/contacts/contacts",
     "pages/PM/trainingPlan/trainingPlan",
+    "pages/PM/contacts/add/add",
+    "pages/PM/contacts/contacts",
+    
     
     "pages/service/service",
     "pages/index/index",
@@ -14,8 +16,8 @@
     "pages/PM/eqExpert/eqExpert",
     "pages/PM/eqExpertReview/eqExpertReview",
     "pages/PM/inspectors/inspectors",
-    "pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail",
-    "pages/PM/contacts/add/add"
+    "pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

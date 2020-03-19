@@ -1,2 +1,33 @@
 <!--pages/PM/contacts/add/add.wxml-->
-<text>pages/PM/contacts/add/add.wxml</text>
+<view>
+  <view>
+    <!-- show 的值绑定到提交按钮的返回值。 -->
+    <mp-toptips msg="{{success}}" type="success" show="true"></mp-toptips>
+  </view>
+
+
+</view>
+
+<view class="formContainer">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="formItems selectItems">      
+        <view>
+          <text>姓名</text>
+          <input type="text" name="name" placeholder="例如：张三"></input>
+        </view>
+        <view>
+          <text>单位:</text>
+          <input type="text" name="company" placeholder="请输入单位"></input>          
+        </view>
+        <view>
+          <text>职务:</text>
+          <input type="text" name="job" placeholder="请输入职务"></input>
+        </view>
+      </view>  
+      
+      <view class="button">
+        <button  form-type="reset"  style="background-color: #939393">清除</button>
+        <button  form-type="submit" style="background-color: #8DE">添加</button>
+      </view>
+    </form>
+</view>

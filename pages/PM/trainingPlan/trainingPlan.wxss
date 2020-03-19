@@ -11,6 +11,8 @@ page{
 }
 .formItems{
   margin-top: 40rpx;
+  flex-direction: column;
+  margin-left:100rpx;
   align-items: center;
 }
 .formItems view{
@@ -27,10 +29,6 @@ page{
   height: 50rpx;
   text-align: center;
   border: 1px solid #999;
-}
-.selectItems{
-  flex-direction: column;
-  margin-left:100rpx; 
 }
 /* selector 显示的文本样式 */
 picker{
