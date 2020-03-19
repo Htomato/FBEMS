@@ -18,7 +18,7 @@ Page({
   selectResult: function (e) {
     console.log('select result', e.detail)
   },
-  addDetail: function () {
+  addContact: function () {
     wx.navigateTo({
       url: '/pages/PM/contacts/add/add',
     })

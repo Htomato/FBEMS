@@ -11,7 +11,7 @@
     <text class="key">单位：</text>
     <text class="value">消防一队</text>
   </view> 
-  <view class="addwrap" bindtap="addDetail" hover-class="plus-hover">
+  <view class="addwrap" bindtap="addContact">
       <image src="/images/icon_bar/add.png"></image>   
   </view> 
 </view>
