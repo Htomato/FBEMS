@@ -16,6 +16,9 @@ Page({
     this.setData({
       title: options.title
     })
+    wx.request({
+      url: '',
+    })
 
   },
 
