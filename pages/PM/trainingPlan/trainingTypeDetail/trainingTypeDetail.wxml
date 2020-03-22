@@ -1,3 +1,9 @@
 <!--pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail.wxml-->
 <text>pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail.wxml</text>
-<view>{{title}}</view>
+<view>
+  <view>{{title}}</view>
+  <view>培训机构：机构名称</view>
+  <text>1.fuwucheng \n1.fuwucheng\n1.fuwucheng</text>
+</view>
+
+

@@ -5,15 +5,35 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    show: false,
+    success:'',
+    status:''
   },
+  formSubmit: function (e) {
+    let _this = this
+    var data = e.detail.value
+    console.log('form发生了submit事件，携带数据为：', data)
+    _this.setData({
+      show:true
+    })
+     
+    
+  },
+  formReset: function () {
+
+    
+    console.log('form发生了reset事件')
+  },
+
+  
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.setData({
-      success: '添加成功'
+      success: '添加成功',
+      topStatus: 'success'
     })
   },
 

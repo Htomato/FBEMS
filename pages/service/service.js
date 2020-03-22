@@ -57,8 +57,6 @@ Page({
       
       success: function(res) {
         var menuList = res.data
-        console.log(menuList)
-
         var menuWapperList = [];
         for(var i = 0; i < menuList.length;i++){
           var menu = menuList[i];
@@ -74,7 +72,6 @@ Page({
             groups: groupsArr
           }
           menuWapperList.push(menuWapper);
-          console.log(menuWapperList);
           }
           that.setData({
             menuItems:menuWapperList
