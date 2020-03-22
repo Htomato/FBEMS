@@ -5,8 +5,7 @@
 }
 .b0-fixed{
   bottom: 0;
-  position: fixed;
-  
+  position: fixed;  
 }
 
 .combtn{

@@ -13,9 +13,43 @@ Page({
     let _this = this
     var data = e.detail.value
     console.log('form发生了submit事件，携带数据为：', data)
-    _this.setData({
-      show:true
-    })
+    var name = data.name
+    var tele = data.tele
+    var company = data.company
+    var job = data.job
+    if(name == ''){
+      wx.showToast({
+        title: '姓名不能为空',
+        icon: 'none'
+      })
+    } else if (tele == '') {
+      wx.showToast({
+        title: '电话不能为空',
+        icon: 'none'
+      })
+    }else{      
+      wx.request({
+        url: '/添加联系人',
+        data:{
+          data:{}
+        },
+        success(res){
+          _this.setData({
+            show: true,
+            success: '添加成功',
+            topStatus: 'success'
+          })
+        },
+        fail(res){
+          _this.setData({
+            show:true,
+            success: '添加失败',//这里可以是服务器返回的错误说明
+            topStatus: 'erroe'
+          })
+        }
+      })
+    }
+    
      
     
   },
