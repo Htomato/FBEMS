@@ -1,9 +1,12 @@
 {
   "pages": [
-    "pages/PM/contacts/add/add",
     "pages/service/service",
-    "pages/PM/trainingPlan/trainingPlan",
     "pages/PM/contacts/contacts",
+    "pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail",
+    "pages/PM/contacts/add/add",
+
+    "pages/PM/trainingPlan/trainingPlan",
+
     "pages/index/index",
     "pages/logs/logs",
     "pages/my/my",
@@ -13,8 +16,7 @@
     "pages/PM/eqTech/eqTech",
     "pages/PM/eqExpert/eqExpert",
     "pages/PM/eqExpertReview/eqExpertReview",
-    "pages/PM/inspectors/inspectors",
-    "pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail"
+    "pages/PM/inspectors/inspectors"  
     
   ],
   "window": {

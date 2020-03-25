@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    contacts:[]
   },
 
   search: function (value) {
@@ -28,8 +28,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
+    let _this = this
+    _this.setData({
       search: this.search.bind(this)
+    })
+    wx.request({
+      url:'http://localhost:8080/contacts/allContacts',
+      success(res) {
+        console.log(res.data)
+        const contacts = res.data
+        _this.setData({
+          contacts:contacts
+        })
+
+
+
+      }
     })
 
   },

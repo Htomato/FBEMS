@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-   
+   trainOrgName:'锐顿',
+   trainContent:'1.fuwucheng \n1.fuwucheng\n1.fuwucheng',
   },
 
   /**
@@ -18,6 +19,9 @@ Page({
     })
     wx.request({
       url: '',
+      data:{
+
+      }
     })
 
   },

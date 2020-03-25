@@ -52,29 +52,29 @@ Page({
     that.setData({
       search: this.search.bind(this)
     })
-    wx:wx.request({
+    wx.request({
       url: 'http://localhost:8080/menu/allMenu',
       
       success: function(res) {
-        var menuList = res.data
-        var menuWapperList = [];
-        for(var i = 0; i < menuList.length;i++){
-          var menu = menuList[i];
-          var groupsStr = menu.groups;
-          var groupsArr = [];
+        const menuList = res.data;
+        const menuWrapperList = [];
+        for(let i = 0; i < menuList.length; i++){
+          const menu = menuList[i];
+          const groupsStr = menu.groups;
+          let groupsArr = [];
           if(groupsStr != null && groupsStr != undefined && groupsStr != ""){
             groupsArr = JSON.parse(groupsStr);
           }
           // console.log(groupsArr);
-          var menuWapper = {
-            menuId : menu.menuId,
-            menuName : menu.menuName,
+          const menuWrapper = {
+            menuId: menu.menuId,
+            menuName: menu.menuName,
             groups: groupsArr
-          }
-          menuWapperList.push(menuWapper);
+          };
+          menuWrapperList.push(menuWrapper);
           }
           that.setData({
-            menuItems:menuWapperList
+            menuItems:menuWrapperList
           })
       },
      
