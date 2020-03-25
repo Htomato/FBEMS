@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/PM/contacts/add/add",
     "pages/service/service",
     "pages/PM/contacts/contacts",
     "pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail",
-    "pages/PM/contacts/add/add",
 
     "pages/PM/trainingPlan/trainingPlan",
 

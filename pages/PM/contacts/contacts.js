@@ -23,6 +23,9 @@ Page({
       url: '/pages/PM/contacts/add/add',
     })
   },
+  call: function(e){
+    console.log(e)
+  },
 
   /**
    * 生命周期函数--监听页面加载

@@ -4,14 +4,14 @@
     <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
   </view>
   <block wx:for="{{contacts}}" wx:key="index">
-    <view class="contact">
-      <image src="/images/avatar/1.jpg" class="avatar"></image>
-      <text class="contact_name">{{item.contactName}}</text>
-      <text class="key">职务：</text>
-      <text class="value">{{item.job}}</text>
-      <text class="key">单位：</text>
-      <text class="value">{{item.company}}</text>
-    </view>
+      <view class="contact"bindtap="call">
+          <image src="{{item.avatar}}" class="avatar"></image>
+          <text class="contact_name">{{item.contactName}}</text>
+          <text class="key">职务：</text>
+          <text class="value">{{item.job}}</text>
+          <text class="key">单位：</text>
+          <text class="value">{{item.company}}</text>
+      </view>
   </block>
 
   <view class="addwrap" bindtap="addContact">
