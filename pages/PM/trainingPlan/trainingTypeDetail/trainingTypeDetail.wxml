@@ -1,10 +1,10 @@
 <!--pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail.wxml-->
 <view class="container">
-    <view class="dbg color-f00 font24 flex-horizontal-center">typeName：{{title}}</view>
+    <view class="dbg color-f00 font24 flex-horizontal-center">{{title}}训练</view>
     <view>
-        <view class="color-a5a5a5 font14 flex-horizontal-center">培训机构：{{trainOrgName}}</view>
+        <view class="color-a5a5a5 font14 flex-horizontal-center">培训机构：{{trorg}}</view>
     </view>
-    <text class="font20 mt10 p-tb5">{{trainContent}}</text>
+    <view class="font20 mt10 p-tb5" style="white-space:pre-wrap">{{content}}</view>
 </view>
 
 

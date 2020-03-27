@@ -1,11 +1,15 @@
 {
   "pages": [
-    "pages/PM/contacts/add/add",
-    "pages/service/service",
-    "pages/PM/contacts/contacts",
-    "pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail",
+
 
     "pages/PM/trainingPlan/trainingPlan",
+    "pages/PM/contacts/contacts",
+    "pages/service/service",
+    "pages/PM/contacts/add/add",
+
+    "pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail",
+
+
 
     "pages/index/index",
     "pages/logs/logs",

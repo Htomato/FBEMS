@@ -1,4 +1,5 @@
 // pages/PM/trainingPlan/trainingPlan.js
+const app = getApp()
 Page({
 
   /**
@@ -8,31 +9,32 @@ Page({
     objectArray: [
       {
         id: 0,
-        name: '美国'
+        name: '体能'
       },
       {
         id: 1,
-        name: '中国'
+        name: '技术'
       },
       {
         id: 2,
-        name: '巴西'
+        name: '战术'
       },
       {
         id: 3,
-        name: '日本'
+        name: '心理'
+      },
+      {
+        id: 4,
+        name: '队列'
       }
     ],
     index: 0,
-    listData:[
-      {"code":"01","text":"利钝","type":"体能"},
-      {"code":"02","text":"消强","type":"业务"},
-      {"code":"03","text":"text3","type":"type3"},
-      {"code":"04","text":"text4","type":"type4"},
-      {"code":"05","text":"text5","type":"type5"},
-      {"code":"06","text":"text6","type":"type6"},
-      {"code":"07","text":"text7","type":"type7"}
-    ]
+    trplan:[]
+    //{ trorg: "利钝",
+    //  trplanId: 1,
+    //  trplancontent: "1、俯卧撑\n2、仰卧起坐\n3、100米佩戴空气呼吸机（2盘65mm水带）跑\n4、1500米长跑\n5、单杠引体\n6、双杠臂屈伸",
+    //  trplantype: "体能"}
+
 
   },
   formSubmit: function (e) {
@@ -49,12 +51,34 @@ Page({
       index: e.detail.value,
     })
   },
+  navigator:function ( e ) {
+    console.log("navigator.e=",e)
+    const type = e.currentTarget.dataset.type
+    const trorg = e.currentTarget.dataset.trorg
+    const content = e.currentTarget.dataset.content
+
+    wx.navigateTo({
+      url:'/pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail?title=' + type + '&content=' + content + '&trorg='+ trorg
+    })
+  },
 
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let _this = this
+    wx.request({
+      url: app.serverUrl + '/trplan/allTrplan',
+      success(res) {
+        console.log(res)
+        const trplan = res.data
+        _this.setData({
+          trplan: trplan
+        })
+
+      }
+    })
 
   },
 

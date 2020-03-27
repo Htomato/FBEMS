@@ -15,8 +15,8 @@ right: 20px;
 
 }
 .addwrap image{
-  width: 81px;
-  height: 81px;
+  width: 64px;
+  height: 64px;
 }
 .avatar{
   height: 48px;
@@ -24,16 +24,17 @@ right: 20px;
 }
 .contact_name{
   margin-left: 10rpx;
-  margin-right: 55rpx;
   font-size: 40rpx;
   widows: 100px;
 }
 .key{  
-  font-size: 28rpx;
+  font-size: 25rpx;
   color: #9b9b9b;
 }
 .value{
-  font-size: 34rpx;
+  font-size: 30rpx;
   color: #535353;
-  margin-right: 30rpx;
+}
+.w280{
+  width: 280rpx;
 }

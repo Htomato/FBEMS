@@ -41,7 +41,10 @@ view, text {
   display: flex;
   justify-content: center;
 }
-
+.flex-horizontal-start {
+  display: flex;
+  justify-content: flex-start;
+}
 .relative {
   position: relative;
 }

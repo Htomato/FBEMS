@@ -1,4 +1,5 @@
 // pages/PM/contacts/contacts.js
+const app = getApp()
 Page({
 
   /**
@@ -25,6 +26,10 @@ Page({
   },
   call: function(e){
     console.log(e)
+    const teleNum = e.currentTarget.dataset.telenum
+    wx.makePhoneCall({
+      phoneNumber:teleNum
+    })
   },
 
   /**
@@ -36,10 +41,11 @@ Page({
       search: this.search.bind(this)
     })
     wx.request({
-      url:'http://localhost:8080/contacts/allContacts',
+      url: app.serverUrl + '/contacts/allContacts',
       success(res) {
         console.log(res.data)
         const contacts = res.data
+
         _this.setData({
           contacts:contacts
         })

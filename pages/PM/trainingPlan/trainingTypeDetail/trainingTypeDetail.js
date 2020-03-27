@@ -5,8 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-   trainOrgName:'锐顿',
-   trainContent:'1.fuwucheng \n1.fuwucheng\n1.fuwucheng',
+   title: '',
+   content: '',
+   trorg:''
   },
 
   /**
@@ -14,16 +15,12 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    const contents = options.content.split(';').join(' \n')
     this.setData({
-      title: options.title
+      title: options.title,
+      content: contents,
+      trorg: options.trorg
     })
-    wx.request({
-      url: '',
-      data:{
-
-      }
-    })
-
   },
 
   /**

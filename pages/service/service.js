@@ -53,7 +53,7 @@ Page({
       search: this.search.bind(this)
     })
     wx.request({
-      url: 'http://localhost:8080/menu/allMenu',
+      url: app.serverUrl + '/menu/allMenu',
       
       success: function(res) {
         const menuList = res.data;

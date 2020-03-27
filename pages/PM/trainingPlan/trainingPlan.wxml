@@ -31,19 +31,25 @@
       <view class="th">培训机构</view>
       <view class="th">培训类别</view>
     </view>
-    <block wx:for="{{listData}}" wx:key="code">
+    <block wx:for="{{trplan}}" wx:key="code">
       <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
-        <view class="td">{{item.code}}</view>
-        <view class="td">{{item.text}}</view>
+        <view class="td">{{index+1}}</view>
+        <view class="td">{{item.trorg}}</view>
         <view class="td value">
-          <navigator url="/pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail?title={{item.type}}">{{item.type}}</navigator>
+          <view  hover-class="navigator-hover" bindtap="navigator"
+                 data-content="{{item.trplancontent}}" data-trorg="{{item.trorg}}" data-type="{{item.trplantype}}">
+            {{item.trplantype}}
+          </view>
         </view>
       </view>
       <view class="tr" wx:else>
-        <view class="td">{{item.code}}</view>
-        <view class="td">{{item.text}}</view>
+        <view class="td">{{index+1}}</view>
+        <view class="td">{{item.trorg}}</view>
         <view class="td value">
-          <navigator url="/pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail?title={{item.type}}" hover-class="navigator-hover">{{item.type}}</navigator>
+          <view  hover-class="navigator-hover" bindtap="navigator"
+                 data-content="{{item.trplancontent}}" data-trorg="{{item.trorg}}" data-type="{{item.trplantype}}">
+            {{item.trplantype}}
+          </view>
         </view>
       </view>
     </block>
