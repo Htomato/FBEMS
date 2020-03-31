@@ -1,7 +1,7 @@
 //app.js
 
 App({
-  serverUrl:"http://localhost:8080",
+  serverUrl:"http://192.168.0.108:8080",
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

@@ -1,2 +1,50 @@
 <!--pages/PM/eqExpertReview/eqExpertReview.wxml-->
-<text>pages/PM/eqExpertReview/eqExpertReview.wxml</text>
+<view class="Container">
+    <view class="formContainer">
+        <form bindsubmit="formSubmit" bindreset="formReset">
+            <view class="formItems">
+                <view>
+                    <text>专家编号</text>
+                    <input type="number" name="number" placeholder="例如：001"></input>
+                </view>
+                <view>
+                    <text>专家姓名</text>
+                    <input type="text" name="name" placeholder="例如：张三"></input>
+                </view>
+            </view>
+            <view class="button">
+                <button form-type="reset" style="background-color: #939393">清除</button>
+                <button form-type="submit" style="background-color: #8DE">查询</button>
+            </view>
+        </form>
+    </view>
+    <view class="table">
+        <view class="tr bg-w">
+            <view class="th">编号</view>
+            <view class="th">姓名</view>
+            <view class="th">专家领域</view>
+            <view class="th">2019审核</view>
+            <view class="th">2020审核</view>
+        </view>
+        <block wx:for="{{eqExpertList}}" wx:key="index">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                <view class="td">{{item.eqexpertId}}</view>
+                <view class="td">{{item.eqexpertName}}</view>
+                <view class="td">{{item.eqexpertDomain}}</view>
+                <view class="td" wx:if="{{item.eqexpertBefor == 1}}">合格</view>
+                <view class="td" wx:else>不合格</view>
+                <view class="td" wx:if="{{item.eqexpertLast == 1}}">合格</view>
+                <view class="td" wx:else>不合格</view>
+            </view>
+            <view class="tr" wx:else>
+                <view class="td">{{item.eqexpertId}}</view>
+                <view class="td">{{item.eqexpertName}}</view>
+                <view class="td">{{item.eqexpertDomain}}</view>
+                <view class="td" wx:if="{{item.eqexpertBefor == 1}}">合格</view>
+                <view class="td" wx:else>不合格</view>
+                <view class="td" wx:if="{{item.eqexpertLast == 1}}">合格</view>
+                <view class="td" wx:else>不合格</view>
+            </view>
+        </block>
+    </view>
+</view>

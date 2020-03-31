@@ -1,0 +1,21 @@
+<view>
+    <view>
+        姓名：{{name}}
+    </view>
+    <view>
+        单位：{{trmanCompany}}
+    </view>
+
+   <view class="flex ai-center">
+       <block wx:for="{{trmanGrades}}" wx:key="index">
+           <view class="flex-horizontal-start">
+               <view>
+                   科目：{{item.type}}
+               </view>
+               <view class="{{item.grade<60?'color-ff0000':'color-363636'}} p-lr30">
+                   成绩：{{item.grade}}
+               </view>
+           </view>
+       </block>
+   </view>
+</view>

@@ -1,2 +1,59 @@
 <!--pages/PM/trMan/trMan.wxml-->
+<!--人员培训管理页面-->
 <text>pages/PM/trMan/trMan.wxml</text>
+        <!--pages/PM/trainingPlan/trainingPlan.wxml-->
+<view class="Container">
+    <view class="formContainer">
+        <form bindsubmit="formSubmit" bindreset="formReset">
+            <view class="formItems">
+                <view>
+                    <text>方案编号</text>
+                    <input type="number" name="number" placeholder="例如：001"></input>
+                </view>
+                <view>
+                    <text>培训机构</text>
+                    <input type="text" name="name" placeholder="例如：锐顿"></input>
+                </view>
+            </view>
+            <view class="button">
+                <button form-type="reset" style="background-color: #939393">清除</button>
+                <button form-type="submit" style="background-color: #8DE">查询</button>
+            </view>
+        </form>
+    </view>
+    <view class="table">
+        <view class="tr bg-w">
+            <view class="th">编号</view>
+            <view class="th">姓名</view>
+            <view class="th">培训1</view>
+            <view class="th">培训2</view>
+            <view class="th">详情</view>
+        </view>
+        <block wx:for="{{trmen}}" wx:key="index">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                <view class="td">{{item.trmanId}}</view>
+                <view class="td">{{item.trmanName}}</view>
+                <view class="td">{{item.trmanGrades[0].type}}:{{item.trmanGrades[0].grade}}</view>
+                <view class="td">{{item.trmanGrades[1].type}}:{{item.trmanGrades[1].grade}}</view>
+                <view class="td value">
+                    <view  hover-class="navigator-hover" bindtap="details"
+                           data-name="{{item.trmanName}}" data-trmanGrades="{{item.trmanGrades}}" data-trmanCompany="{{item.trmanCompany}}">
+                        更多
+                    </view>
+                </view>
+            </view>
+            <view class="tr" wx:else>
+                <view class="td">{{item.trmanId}}</view>
+                <view class="td">{{item.trmanName}}</view>
+                <view class="td">{{item.trmanGrades[0].type}}:{{item.trmanGrades[0].grade}}</view>
+                <view class="td">{{item.trmanGrades[1].type}}:{{item.trmanGrades[1].grade}}</view>
+                <view class="td value">
+                    <view  hover-class="navigator-hover" bindtap="details"
+                           data-name="{{item.trmanName}}" data-trmanGrades="{{item.trmanGrades}}" data-trmanCompany="{{item.trmanCompany}}">
+                        更多
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

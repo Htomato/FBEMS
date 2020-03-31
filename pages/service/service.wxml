@@ -19,7 +19,6 @@
 
     <!-- 右侧边栏 -->
     <view class="nav_right">
-      
       <block wx:for="{{menuItems[curIndex].groups}}" wx:key="index">
         <view class="nav_right_title">------{{item.group_name}}-------</view>
         <view>
