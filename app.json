@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/PM/eqExpert/eqExpert",
     "pages/service/service",
-
+    "pages/PM/eqExpertReview/eqExpertReview",
+    "pages/PM/eqExpert/eqExpert",
     "pages/PM/trMan/trMan",
     "pages/PM/trainingPlan/trainingPlan",
     "pages/PM/contacts/contacts",
@@ -16,7 +16,6 @@
     "pages/PM/traOrgReview/traOrgReview",
     "pages/PM/eqTech/eqTech",
 
-    "pages/PM/eqExpertReview/eqExpertReview",
     "pages/PM/inspectors/inspectors",
     "pages/PM/trMan/trManDetail/trManDetail"
   ],

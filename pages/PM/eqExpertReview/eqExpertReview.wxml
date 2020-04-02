@@ -1,5 +1,9 @@
 <!--pages/PM/eqExpertReview/eqExpertReview.wxml-->
 <view class="Container">
+    <view>
+        <!-- show 的值绑定到提交按钮的返回值。 -->
+        <mp-toptips msg="{{success}}" type="{{topStatus}}" show="{{show}}"></mp-toptips>
+    </view>
     <view class="formContainer">
         <form bindsubmit="formSubmit" bindreset="formReset">
             <view class="formItems">
@@ -22,28 +26,38 @@
         <view class="tr bg-w">
             <view class="th">编号</view>
             <view class="th">姓名</view>
-            <view class="th">专家领域</view>
-            <view class="th">2019审核</view>
-            <view class="th">2020审核</view>
+            <view class="th">审核状态</view>
+            <view class="th">资格证书</view>
+            <view class="th">专家详情</view>
         </view>
-        <block wx:for="{{eqExpertList}}" wx:key="index">
+        <block wx:for="{{reviewList}}" wx:key="index">
             <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
                 <view class="td">{{item.eqexpertId}}</view>
                 <view class="td">{{item.eqexpertName}}</view>
-                <view class="td">{{item.eqexpertDomain}}</view>
-                <view class="td" wx:if="{{item.eqexpertBefor == 1}}">合格</view>
-                <view class="td" wx:else>不合格</view>
-                <view class="td" wx:if="{{item.eqexpertLast == 1}}">合格</view>
-                <view class="td" wx:else>不合格</view>
+                <view class="td color-0cf" data-id="{{item.eqexpertId}}"  bindtap="changeStatus">待审核</view>
+                <view class="td flex-horizontal-center">
+                    <view class="bg-24a9e2 w100" bindtap="quaImg" data-quaImgUrl="{{item.eqexpertQuaimage}}">查看</view>
+                </view>
+                <modal title="资格证书" hidden="{{modalHidden}}" bindconfirm="modalConfirm">
+                    <view>
+                    <image class="image" src="{{item.eqexpertQuaimage}}" mode='aspectFill'></image>
+                    </view>
+                </modal>
+                <view class="td text-over">{{item.eqexpertDetail}}</view>
             </view>
             <view class="tr" wx:else>
                 <view class="td">{{item.eqexpertId}}</view>
                 <view class="td">{{item.eqexpertName}}</view>
-                <view class="td">{{item.eqexpertDomain}}</view>
-                <view class="td" wx:if="{{item.eqexpertBefor == 1}}">合格</view>
-                <view class="td" wx:else>不合格</view>
-                <view class="td" wx:if="{{item.eqexpertLast == 1}}">合格</view>
-                <view class="td" wx:else>不合格</view>
+                <view class="td color-0cf" data-id="{{item.eqexpertId}}"  bindtap="changeStatus" >待审核</view>
+                <view class="td flex-horizontal-center">
+                    <view class="bg-24a9e2 w100" bindtap="quaImg" data-quaImgUrl="{{item.eqexpertQuaimage}}">查看</view>
+                </view>
+                <modal title="资格证书" hidden="{{modalHidden}}" bindconfirm="modalConfirm">
+                    <view>
+                        <image class="image" src="{{item.eqexpertQuaimage}}" mode='aspectFill'></image>
+                    </view>
+                </modal>
+                <view class="td text-over">{{item.eqexpertDetail}}</view>
             </view>
         </block>
     </view>

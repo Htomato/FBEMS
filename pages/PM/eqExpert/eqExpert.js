@@ -1,5 +1,5 @@
 // pages/PM/eqExpert/eqExpert.js
-const app = getApp()
+const app = getApp();
 Page({
 
   /**

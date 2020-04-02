@@ -8,7 +8,7 @@ Page({
   data: {
     show: false,
     success:'',
-    status:''
+    topStatus:''
   },
   formSubmit: function (e) {
     let _this = this
@@ -86,10 +86,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      success: '添加成功',
-      topStatus: 'success'
-    })
+
   },
 
   /**

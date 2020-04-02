@@ -1,7 +1,5 @@
 <!--pages/PM/trMan/trMan.wxml-->
 <!--人员培训管理页面-->
-<text>pages/PM/trMan/trMan.wxml</text>
-        <!--pages/PM/trainingPlan/trainingPlan.wxml-->
 <view class="Container">
     <view class="formContainer">
         <form bindsubmit="formSubmit" bindreset="formReset">
