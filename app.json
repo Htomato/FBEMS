@@ -1,23 +1,31 @@
 {
   "pages": [
+    "pages/PM/contacts/add/add",
+
+    "pages/PM/xiaoFangCar/xiaoFangCar",
+
+    "pages/PM/contacts/contacts",
+
+    "pages/PM/xingZhengCar/xingZhengCar",
+
+
+    "pages/PM/inspectors/inspectors",
+    "pages/PM/eqTech/eqTech",
+
+    "pages/PM/traOrgReview/traOrgReview",
+    "pages/PM/traOrgMain/traOrgMain",
     "pages/service/service",
     "pages/PM/eqExpertReview/eqExpertReview",
     "pages/PM/eqExpert/eqExpert",
     "pages/PM/trMan/trMan",
     "pages/PM/trainingPlan/trainingPlan",
-    "pages/PM/contacts/contacts",
-    "pages/PM/contacts/add/add",
     "pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail",
     "pages/index/index",
     "pages/logs/logs",
     "pages/my/my",
-
-    "pages/PM/traOrgMain/traOrgMain",
-    "pages/PM/traOrgReview/traOrgReview",
-    "pages/PM/eqTech/eqTech",
-
-    "pages/PM/inspectors/inspectors",
-    "pages/PM/trMan/trManDetail/trManDetail"
+    "pages/PM/trMan/trManDetail/trManDetail",
+    "pages/PM/linceFile/linceFile",
+    "pages/PM/xiaoFangCar/add/add"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,18 +1,28 @@
 // pages/PM/inspectors/inspectors.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    inspectorsList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let _this = this
+    wx.request({
+      url: app.serverUrl + "/worker/allInspectors",
+      success(res) {
+        console.log(res),
+        _this.setData({
+          inspectorsList: res.data
+        })
+      }
+    })
   },
 
   /**

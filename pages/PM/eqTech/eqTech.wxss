@@ -1,1 +1,6 @@
 /* pages/PM/eqTech/eqTech.wxss */
+page{
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+}

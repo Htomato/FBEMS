@@ -6,19 +6,23 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //topTips data
     show: false,
     success:'',
-    topStatus:''
+    topStatus:'',
+
+    avatar: ''
   },
   formSubmit: function (e) {
     let _this = this
+    console.log("formSubmit _this",_this)
     const data = e.detail.value;
-    const dataType = typeof (data);
     // console.log('form发生了submit事件，携带数据为：', data,"数据类型",dataType)
     const contactName = data.contactName
     const contactTele = data.contactTele
     const company = data.company
     const job = data.job
+    const avatar = _this.data.avatar
     if(contactName === ''){
       wx.showToast({
         title: '姓名不能为空',
@@ -41,10 +45,11 @@ Page({
       })
     }else{
       // console.log("即将发送的：  ---",data)
+      console.log("avatar",avatar)
       wx.request({
             url: app.serverUrl + '/contacts/add',
             data:{
-              data:{contactName,contactTele,company,job}
+              data:{contactName,contactTele,company,job,avatar}
             },
 
             success(res){
@@ -80,61 +85,46 @@ Page({
     console.log('form发生了reset事件')
   },
 
-  
+  /**
+   * 上传头像
+   */
+
+  avatarUpload: function () {
+    let _this = this
+    wx.chooseImage({
+      count: 1,
+      success(res) {
+        console.log("res",res)
+        const filepath = res.tempFilePaths
+
+        wx.uploadFile({
+          url: app.serverUrl + '/contacts/upload',
+          filePath: filepath[0],
+          name: 'avatar',
+          formData: {
+            description: 'avatarTest'
+          },
+          success(res) {
+            console.log(res.data)
+            const avatar = res.data
+            _this.setData({
+              avatar: avatar
+            })
+          },
+          fail(res) {
+            console.log("upload连接失败")
+          }
+        })
+      }
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
+
 })

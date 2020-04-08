@@ -4,10 +4,3 @@ page{
   flex-direction: column;
   background-color: #f8f8f8;
 }
-/* selector 显示的文本样式 */
-picker{
-  width: 60px;
-  height: 30px;
-  margin-left: 20rpx;
-  border-bottom: 3rpx solid;  
-}

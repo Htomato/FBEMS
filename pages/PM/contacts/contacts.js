@@ -43,7 +43,6 @@ Page({
     wx.request({
       url: app.serverUrl + '/contacts/allContacts',
       success(res) {
-        console.log(res.data)
         const contacts = res.data
 
         _this.setData({
