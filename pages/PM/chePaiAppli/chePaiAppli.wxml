@@ -1,0 +1,50 @@
+<view class="Container">
+    <view class="formContainer">
+        <form bindsubmit="formSubmit" bindreset="formReset">
+            <view class="formItems">
+                <view>
+                    <text>车辆品牌</text>
+                    <input type="number" name="number" placeholder="例如：解放"></input>
+                </view>
+                <view>
+                    <text>负责人</text>
+                    <input type="text" name="name" placeholder="例如：张三"></input>
+                </view>
+            </view>
+            <view class="button">
+                <button form-type="reset" style="background-color: #939393">清除</button>
+                <button form-type="submit" style="background-color: #8DE">查询</button>
+            </view>
+        </form>
+    </view>
+    <view class="table">
+        <view class="tr bg-w">
+            <view class="th">申请车辆</view>
+            <view class="th">主管单位</view>
+            <view class="th">审核状态</view>
+            <view class="th">车辆来源</view>
+            <view class="th">车辆类别</view>
+        </view>
+        <block wx:for="{{newList}}" wx:key="index">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                <view class="td">{{item.carBrand}}-{{item.carModel}}</view>
+                <view class="td">{{item.carCompany}}</view>
+                <view class="td color-0cf" data-id="{{item.carId}}"  bindtap="changeStatus">待审核</view>
+                <view class="td">{{item.carSource}}</view>
+                <view class="td">{{item.carCategory}}</view>
+            </view>
+            <view class="tr" wx:else>
+                <view class="td">{{item.trmanId}}</view>
+                <view class="td">{{item.trmanName}}</view>
+                <view class="td">{{item.trmanGrades[0].type}}:{{item.trmanGrades[0].grade}}</view>
+                <view class="td">{{item.trmanGrades[1].type}}:{{item.trmanGrades[1].grade}}</view>
+                <view class="td value">
+                    <view  hover-class="navigator-hover" bindtap="details"
+                           data-name="{{item.trmanName}}" data-trmanGrades="{{item.trmanGrades}}" data-trmanCompany="{{item.trmanCompany}}">
+                        更多
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

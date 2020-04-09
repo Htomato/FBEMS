@@ -16,6 +16,8 @@ Page({
         })
     },
     addXingZhengCar: function () {
-
+        wx.navigateTo({
+            url: '/pages/PM/xiaoFangCar/add/add'
+        })
     }
 });

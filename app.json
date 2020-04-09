@@ -1,5 +1,9 @@
 {
   "pages": [
+    "pages/PM/chePaiAppli/chePaiAppli",
+
+    "pages/PM/xiaoFangCar/add/add",
+
     "pages/PM/contacts/add/add",
 
     "pages/PM/xiaoFangCar/xiaoFangCar",
@@ -24,8 +28,7 @@
     "pages/logs/logs",
     "pages/my/my",
     "pages/PM/trMan/trManDetail/trManDetail",
-    "pages/PM/linceFile/linceFile",
-    "pages/PM/xiaoFangCar/add/add"
+    "pages/PM/linceFile/linceFile"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -48,7 +48,7 @@
                 <view class="ipt-wrap border-b flex-row ai-center">
                     <view class="font14 mr40">车辆来源:</view>
                     <radio-group bindchange="carSourceRadio">
-                        <radio class="ml5" wx:for-items="{{items}}" wx:key="name" value="{{item.name}}">
+                        <radio class="ml5" wx:for-items="{{carSourceRadio}}" wx:key="name" value="{{item.name}}">
                             <text>{{item.value}}</text>
                         </radio>
                     </radio-group>
@@ -57,7 +57,7 @@
                 <view class="ipt-wrap border-b flex-row ai-center">
                     <view class="font14 mr40">车辆类别:</view>
                     <radio-group bindchange="carCategoryRadio">
-                        <radio class="ml5" wx:for-items="{{items}}" wx:key="name" value="{{item.name}}">
+                        <radio class="ml5" wx:for-items="{{carCategoryRadio}}" wx:key="name" value="{{item.name}}">
                             <text>{{item.value}}</text>
                         </radio>
                     </radio-group>
