@@ -1,19 +1,20 @@
 const app = getApp()
 Page({
     data: {
-        licenseList: []
+        //更换过车牌照的车辆列表
+        changeList:[]
     },
     onLoad: function (options) {
         let _this = this
         wx.request({
-            url: app.serverUrl + '/car/allLicense',
+            url: app.serverUrl + '/car/changeCarList',
             success(res) {
                 console.log(res)
                 _this.setData({
-                    licenseList: res.data
+                    changeList: res.data
                 })
+
             }
         })
-
     }
 });

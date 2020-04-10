@@ -34,16 +34,11 @@
                 <view class="td">{{item.carCategory}}</view>
             </view>
             <view class="tr" wx:else>
-                <view class="td">{{item.trmanId}}</view>
-                <view class="td">{{item.trmanName}}</view>
-                <view class="td">{{item.trmanGrades[0].type}}:{{item.trmanGrades[0].grade}}</view>
-                <view class="td">{{item.trmanGrades[1].type}}:{{item.trmanGrades[1].grade}}</view>
-                <view class="td value">
-                    <view  hover-class="navigator-hover" bindtap="details"
-                           data-name="{{item.trmanName}}" data-trmanGrades="{{item.trmanGrades}}" data-trmanCompany="{{item.trmanCompany}}">
-                        更多
-                    </view>
-                </view>
+                <view class="td">{{item.carBrand}}-{{item.carModel}}</view>
+                <view class="td">{{item.carCompany}}</view>
+                <view class="td color-0cf" data-id="{{item.carId}}"  bindtap="changeStatus">待审核</view>
+                <view class="td">{{item.carSource}}</view>
+                <view class="td">{{item.carCategory}}</view>
             </view>
         </block>
     </view>

@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/PM/linceChFile/linceChFile",
+    "pages/PM/linceFile/linceFile",
+
     "pages/PM/chePaiAppli/chePaiAppli",
 
     "pages/PM/xiaoFangCar/add/add",
@@ -27,8 +30,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/my/my",
-    "pages/PM/trMan/trManDetail/trManDetail",
-    "pages/PM/linceFile/linceFile"
+    "pages/PM/trMan/trManDetail/trManDetail"
+
   ],
   "window": {
     "backgroundTextStyle": "light",

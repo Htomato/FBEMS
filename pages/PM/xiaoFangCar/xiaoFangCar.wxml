@@ -1,4 +1,8 @@
 <view class="Container">
+    <view>
+        <!-- show 的值绑定到提交按钮的返回值。 -->
+        <mp-toptips msg="{{success}}" type="{{topStatus}}" show="{{show}}"></mp-toptips>
+    </view>
     <view class="formContainer">
         <form bindsubmit="formSubmit" bindreset="formReset">
             <view class="formItems">
@@ -26,14 +30,14 @@
             <view class="th">车牌号</view>
         </view>
         <block wx:for="{{fireCarList}}" wx:key="index">
-            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}" data-id="{{item.carId}}"  bindtap="changeLicense">
                 <view class="td">{{item.carId}}</view>
                 <view class="td">{{item.headName}}</view>
                 <view class="td">{{item.headCompany}}</view>
                 <view class="td">{{item.carBrand}}-{{item.carModel}}</view>
                 <view class="td font11">{{item.carLicenseplate}}</view>
             </view>
-            <view class="tr" wx:else>
+            <view class="tr" wx:else data-id="{{item.carId}}"  bindtap="changeLicense">
                 <view class="td">{{item.carId}}</view>
                 <view class="td">{{item.headName}}</view>
                 <view class="td">{{item.headCompany}}</view>

@@ -1,0 +1,31 @@
+<view class="Container">
+    <view class="table">
+        <view class="tr bg-w">
+            <view class="th">类别</view>
+            <view class="th">车牌号</view>
+        </view>
+        <block wx:for="{{licenseList}}" wx:key="index">
+            <view class="bg-g" wx:if="{{index % 2 == 0}}">
+                <view class="tr" wx:if="{{item.adminlicenseNumber.length > 0}}">
+                    <view class="td">行政牌照</view>
+                    <view class="td">{{item.adminlicenseNumber}}</view>
+                </view>
+                <view class="tr" wx:else>
+                    <view class="td">消防牌照</view>
+                    <view class="td">{{item.firelicenseNumber}}</view>
+                </view>
+            </view>
+            <view wx:else>
+                <view class="tr" wx:if="{{item.adminlicenseNumber.length > 0}}">
+                    <view class="td">行政牌照</view>
+                    <view class="td">{{item.adminlicenseNumber}}</view>
+                </view>
+                <view class="tr" wx:else>
+                    <view class="td">消防牌照</view>
+                    <view class="td">{{item.firelicenseNumber}}</view>
+                </view>
+            </view>
+
+        </block>
+    </view>
+</view>
