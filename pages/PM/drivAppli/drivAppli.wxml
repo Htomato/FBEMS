@@ -1,0 +1,52 @@
+<view class="Container">
+    <view class="formContainer">
+        <form bindsubmit="formSubmit" bindreset="formReset">
+            <view class="formItems">
+                <view>
+                    <text>申请人</text>
+                    <input type="number" name="number" placeholder="例如：张三"></input>
+                </view>
+                <view>
+                    <text>驾驶证类型</text>
+                    <input type="text" name="name" placeholder="例如：C1"></input>
+                </view>
+                <view>
+                    <text>队别</text>
+                    <input type="text" name="name" placeholder="例如：消防一队"></input>
+                </view>
+            </view>
+            <view class="button">
+                <button form-type="reset" style="background-color: #939393">清除</button>
+                <button form-type="submit" style="background-color: #8DE">查询</button>
+            </view>
+        </form>
+    </view>
+    <view class="table">
+        <view class="tr bg-w">
+            <view class="th">申请人</view>
+            <view class="th">申请状态</view>
+            <view class="th">牌照类型</view>
+            <view class="th">申请时间</view>
+            <view class="th">上级单位</view>
+        </view>
+        <block wx:for="{{applyList}}" wx:key="index">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                <view class="td">{{item.driverName}}</view>
+                <view class="td color-0cf"  data-id="{{item.carId}}"  bindtap="changeApply">待审核</view>
+                <view class="td">{{item.licenseType}}</view>
+                <view class="td">{{item.driverApplydate}}</view>
+                <view class="td" >{{item.driverCompany}}</view>
+
+            </view>
+            <view class="tr" wx:else>
+                <view class="td">{{item.driverName}}</view>
+                <view class="td">{{item.driverAge}}</view>
+                <view class="td">{{item.driverCompany}}</view>
+                <view class="td">{{item.licenseType}}</view>
+                <view class="td color-279efd" wx:if="{{item.licenseStatus == 1}}">正常</view>
+                <view class="td color-66ded0" wx:elif="{{item.licenseStatus == 0}}">申请中</view>
+                <view class="td color-eb3324" wx:else>吊销</view>
+            </view>
+        </block>
+    </view>
+</view>

@@ -1,5 +1,9 @@
 {
   "pages": [
+    "pages/PM/perInfo/perInfo",
+
+    "pages/PM/revCar/revCar",
+
     "pages/PM/linceChFile/linceChFile",
     "pages/PM/linceFile/linceFile",
 
@@ -30,8 +34,9 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/my/my",
-    "pages/PM/trMan/trManDetail/trManDetail"
-
+    "pages/PM/trMan/trManDetail/trManDetail",
+    "pages/PM/headRev/headRev",
+    "pages/PM/drivAppli/drivAppli"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -155,6 +155,10 @@ view, text {
   color: #fa9c3e;
 }
 
+.color-66ded0{
+  color: #66ded0;
+}
+
 .bg-279efd {
   background: #279efd;
 }
