@@ -12,3 +12,16 @@ picker{
   margin-left: 20rpx;
   border-bottom: 3rpx solid;  
 }
+.addwrap {
+
+  position:fixed;
+
+  bottom:30px;
+
+  right: 20px;
+
+}
+.addwrap image{
+  width: 64px;
+  height: 64px;
+}

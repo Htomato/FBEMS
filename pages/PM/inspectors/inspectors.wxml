@@ -38,7 +38,7 @@
                 <view class="td">{{item.workerName}}</view>
                 <view class="td">{{item.workerCompany}}</view>
                 <view class="td" wx:if="{{item.workerStatus == 1}}">通过</view>
-                <view class="td" wx:else>不通过</view>
+                <view class="td" wx:else>未审核</view>
             </view>
         </block>
     </view>

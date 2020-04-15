@@ -2,5 +2,5 @@
   "usingComponents": {
     "mp-toptips": "/components/weui-miniprogram/toptips/toptips"
   },
-  "navigationBarTitleText": "添加消防车"
+  "navigationBarTitleText": "添加车辆"
 }

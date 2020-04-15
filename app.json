@@ -1,31 +1,26 @@
 {
   "pages": [
+    "pages/service/service",
+    "pages/PM/outCar/outCar",
+    "pages/PM/vioRecord/vioRecord",
+    "pages/PM/drivRev/drivRev",
+    "pages/PM/drivRev/detail/detail",
+    "pages/PM/drivFileAppli/drivFileAppli",
+    "pages/PM/drivAppli/drivAppli",
     "pages/PM/perInfo/perInfo",
-
     "pages/PM/revCar/revCar",
-
     "pages/PM/linceChFile/linceChFile",
     "pages/PM/linceFile/linceFile",
-
     "pages/PM/chePaiAppli/chePaiAppli",
-
     "pages/PM/xiaoFangCar/add/add",
-
     "pages/PM/contacts/add/add",
-
     "pages/PM/xiaoFangCar/xiaoFangCar",
-
     "pages/PM/contacts/contacts",
-
     "pages/PM/xingZhengCar/xingZhengCar",
-
-
     "pages/PM/inspectors/inspectors",
     "pages/PM/eqTech/eqTech",
-
     "pages/PM/traOrgReview/traOrgReview",
     "pages/PM/traOrgMain/traOrgMain",
-    "pages/service/service",
     "pages/PM/eqExpertReview/eqExpertReview",
     "pages/PM/eqExpert/eqExpert",
     "pages/PM/trMan/trMan",
@@ -36,7 +31,9 @@
     "pages/my/my",
     "pages/PM/trMan/trManDetail/trManDetail",
     "pages/PM/headRev/headRev",
-    "pages/PM/drivAppli/drivAppli"
+    "pages/PM/outCar/in/in",
+    "pages/PM/standard/standard",
+    "pages/PM/trainingPlan/add/add"
   ],
   "window": {
     "backgroundTextStyle": "light",

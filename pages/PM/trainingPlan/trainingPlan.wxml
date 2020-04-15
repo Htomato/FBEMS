@@ -13,9 +13,11 @@
         </view>
         <view>
           <text>培训类别</text>
-          <picker bindchange="pickerChange" name="selectValue" value="{{index}}" range="{{objectArray}}" range-key="{{'name'}}">
-            <view>{{objectArray[index].name}}</view>
-          </picker>
+          <radio-group bindchange="trplantypeSelectRadio" >
+            <radio class="ml5" wx:for-items="{{trplantypeRadio}}" wx:key="name" value="{{item.name}}">
+              <view class="ai-center">{{item.value}}</view>
+            </radio>
+          </radio-group>
         </view>
 
       </view>
@@ -53,5 +55,8 @@
         </view>
       </view>
     </block>
+  </view>
+  <view class="addwrap" bindtap="addTraPlan">
+    <image src="/images/icon_bar/add.png"></image>
   </view>
 </view>

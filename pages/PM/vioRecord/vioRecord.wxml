@@ -1,0 +1,49 @@
+<view class="Container">
+    <view class="formContainer">
+        <form bindsubmit="formSubmit" bindreset="formReset">
+            <view class="formItems">
+                <view>
+                    <text>牌照类型</text>
+                    <input type="number" name="licenseType" placeholder="例如：C1"></input>
+                </view>
+                <view>
+                    <text>驾驶员</text>
+                    <input type="text" name="driver" placeholder="例如：张三"></input>
+                </view>
+                <view>
+                    <text>队别</text>
+                    <input type="text" name="company" placeholder="例如：消防一队"></input>
+                </view>
+            </view>
+            <view class="button">
+                <button form-type="reset" style="background-color: #939393">清除</button>
+                <button form-type="submit" style="background-color: #8DE">查询</button>
+            </view>
+        </form>
+    </view>
+    <view class="table">
+        <view class="tr bg-w">
+            <view class="th w100">驾驶员</view>
+            <view class="th">单位</view>
+            <view class="th">牌照类别</view>
+            <view class="th">违章详情</view>
+            <view class="th">扣分情况</view>
+        </view>
+        <block wx:for="{{vioRecordDrivers}}" wx:key="index">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                <view class="td">{{item.driverName}}</view>
+                <view class="td">{{item.driverCompany}}</view>
+                <view class="td">{{item.licenseType}}</view>
+                <view class="td">{{item.licenseViorecord}}</view>
+                <view class="td">{{item.licenseDeduction}}</view>
+            </view>
+            <view class="tr" wx:else data-id="{{item.carId}}"  bindtap="changeLicense">
+                <view class="td">{{item.driverName}}</view>
+                <view class="td">{{item.driverCompany}}</view>
+                <view class="td">{{item.licenseType}}</view>
+                <view class="td">{{item.licenseViorecord}}</view>
+                <view class="td">{{item.licenseDeduction}}</view>
+            </view>
+        </block>
+    </view>
+</view>

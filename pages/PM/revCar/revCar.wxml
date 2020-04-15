@@ -39,7 +39,7 @@
                 <view class="td">{{item.headName}}</view>
                 <view class="td">{{item.carCompany}}</view>
                 <view class="td">{{item.carBrand}}-{{item.carModel}}</view>
-                <view class="td">{{item.carLicenseplate}}</view>
+                <view class="td font11">{{item.carLicenseplate}}</view>
                 <view class="td color-0cf"  data-id="{{item.carId}}"  bindtap="changeCarRev">
                     未审查
                 </view>

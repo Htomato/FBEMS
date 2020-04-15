@@ -26,20 +26,20 @@ Page({
         const id = e.currentTarget.dataset.id
         wx.showModal({
             title: "提醒",
-            content: "是否通过车辆年审？",
+            content: "是否通过驾驶证申请？",
             cancelText: "否",
             confirmText: "通过",
             success(res) {
                 console.log(res)
                 if (res.confirm) {
                     wx.request({
-                        url: app.serverUrl + '/car/changeApply?id=' + id,
+                        url: app.serverUrl + '/driver/changeApply?id=' + id,
                         success(res) {
                             console.log("服务器res",res)
                             if (res.data === 1) {
                                 _this.setData({
                                     show: true,
-                                    success: '修改通过',
+                                    success: '审核通过',
                                     topStatus: 'success'
                                 })
                                 //刷新页面

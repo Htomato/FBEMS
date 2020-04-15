@@ -1,0 +1,37 @@
+<view class="container">
+    <view>
+        <!-- show 的值绑定到提交按钮的返回值。 -->
+        <mp-toptips msg="{{success}}" type="{{topStatus}}" show="{{show}}"></mp-toptips>
+    </view>
+    <view class="bg-fff p-lr30 border-t">
+        <form bindsubmit="formSubmit" bindreset="formReset">
+            <view>
+
+                <view class="ipt-wrap border-b flex-row ai-center">
+                    <view class="font14 mr40" >车型:</view>
+                    <input type="text" name="outcarModel" placeholder="请输入外来车辆车型" placeholder-class="tx-left" focus="true">></input>
+                </view>
+
+                <view class="ipt-wrap border-b flex-row ai-center">
+                    <view class="font14 mr40">驾驶员:</view>
+                    <input type="number" name="outcarDriver" placeholder="请输入驾驶员姓名" placeholder-class="tx-left"> </input>
+                </view>
+
+
+                <view class="ipt-wrap border-b flex-row ai-center">
+                    <view class="font14 mr40">车辆牌照:</view>
+                    <input type="text" name="outcarLicense" placeholder="请输入车辆牌照" placeholder-class="tx-left"> </input>
+                </view>
+
+                <view class="ipt-wrap border-b flex-row ai-center">
+                    <view class="font14 mr40 ">备注:</view>
+                    <input type="text" name="outcarRemarks" placeholder="情况说明" placeholder-class="tx-left"></input>
+                </view>
+            </view>
+            <button form-type="reset" class="font16 _w100 bg-c9c9c9 color-fff combtn resetBtn" style="padding: 0 0;">清空</button>
+            <button form-type="submit" class="font16 _w100 bg-btn color-fff combtn subBtn" style="padding: 0 0;">添加</button>
+        </form>
+    </view>
+</view>
+
+

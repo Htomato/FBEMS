@@ -1,10 +1,20 @@
 <!--pages/PM/contacts/contacts.wxml-->
 <view>
-  <view>
-    <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
-  </view>
+    <view>
+        <!-- show 的值绑定到提交按钮的返回值。 -->
+        <mp-toptips msg="{{success}}" type="{{topStatus}}" show="{{show}}"></mp-toptips>
+    </view>
+    <view>
+        <mp-searchbar bindselectresult="selectResult" bindhideInput="hideInput" search="{{search}}"></mp-searchbar>
+    </view>
   <block wx:for="{{contacts}}" wx:key="index">
-      <view class="contact" bindtap="call" data-teleNum="{{item.contactTele}}">
+      <view class="contact"
+            bind:touchstart="touchstart"
+            bind:touchend="touchend"
+            bind:longtap="delete"
+            bindtap="call"
+            data-teleNum="{{item.contactTele}}"
+            data-id="{{item.contactId}}">
           <view class="flex-horizontal-start ai-center w280">
               <image src="{{item.avatar}}" class="avatar"></image>
               <text class="contact_name ai-center">{{item.contactName}}</text>

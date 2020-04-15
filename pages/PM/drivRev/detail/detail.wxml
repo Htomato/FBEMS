@@ -1,0 +1,33 @@
+<view>
+    <view>
+        姓名：{{driver.driverName}}
+    </view>
+    <view>
+        年龄：{{driver.driverAge}}
+    </view>
+    <view>
+        单位：{{driver.driverCompany}}
+    </view>
+    <view>
+        驾驶证类别：{{driver.licenseType}}
+    </view>
+    <view>
+        档案编号：{{driver.licenseNumber}}
+    </view>
+    <view>
+        驾驶证有效期限：{{driver.driverLastdate}}
+    </view>
+    <view>
+        驾驶证扣分情况：
+        <block wx:if="{{driver.licenseViorecord == null}}">无</block>
+        <block wx:else>{{driver.licenseViorecord}}</block>
+    </view>
+    <view>
+        驾驶证剩余分数：{{driver.licenseScore}}
+    </view>
+    <view>
+        年审情况：
+        <block wx:if="{{driver.licenseScore>0}}">合格</block>
+        <block wx:else>不合格</block>
+    </view>
+</view>

@@ -1,0 +1,54 @@
+<view class="Container">
+    <view class="formContainer">
+        <form bindsubmit="formSubmit" bindreset="formReset">
+            <view class="formItems">
+                <view>
+                    <text>档案编号</text>
+                    <input type="number" name="number" placeholder="例如：430101753216"></input>
+                </view>
+                <view>
+                    <text>驾驶员</text>
+                    <input type="text" name="name" placeholder="例如：张三"></input>
+                </view>
+                <view>
+                    <text>所属单位</text>
+                    <input type="text" name="name" placeholder="例如：消防一队"></input>
+                </view>
+            </view>
+            <view class="button">
+                <button form-type="reset" style="background-color: #939393">清除</button>
+                <button form-type="submit" style="background-color: #8DE">查询</button>
+            </view>
+        </form>
+    </view>
+    <view class="table">
+        <view class="tr bg-w">
+            <view class="th">姓名</view>
+            <view class="th">档案编号</view>
+            <view class="th">年龄</view>
+            <view class="th">申请时间</view>
+            <view class="th">驾驶证分数</view>
+        </view>
+        <block wx:for="{{applyFileList}}" wx:key="index">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                <view class="td color-279efd">{{item.driverName}}</view>
+                <view class="td" wx:if="{{item.licenseNumber == ''}}">暂未获得</view>
+                <view class="td"  wx:else>{{item.licenseNumber}}</view>
+                <view class="td">{{item.driverAge}}</view>
+                <view class="td">{{item.driverApplydate}}</view>
+                <view class="td"  wx:if="{{item.licenseScore == null}}">暂未获得</view>
+                <view class="td {{item.licenseScore<12?'color-ff0000':'color-363636'}}"  wx:else>{{item.licenseScore}}</view>
+
+            </view>
+            <view class="tr" wx:else>
+                <view class="td color-279efd">{{item.driverName}}</view>
+                <view class="td" wx:if="{{item.licenseNumber == ''}}">暂未获得</view>
+                <view class="td" wx:else>{{item.licenseNumber}}</view>
+                <view class="td">{{item.driverAge}}</view>
+                <view class="td">{{item.driverApplydate}}</view>
+                <view class="td"  wx:if="{{item.licenseScore == null}}">暂未获得</view>
+                <view class="td"  wx:else>{{item.licenseScore}}</view>
+            </view>
+        </block>
+    </view>
+</view>

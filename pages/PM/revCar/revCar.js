@@ -40,7 +40,7 @@ Page({
                             if (res.data === 1) {
                                 _this.setData({
                                     show: true,
-                                    success: '修改通过',
+                                    success: '审核通过',
                                     topStatus: 'success'
                                 })
                                 //刷新页面
@@ -48,7 +48,7 @@ Page({
                             } else {
                                 _this.setData({
                                     show: true,
-                                    success: '修改失败',
+                                    success: '操作失败',
                                     topStatus: 'error'
                                 })
                             }

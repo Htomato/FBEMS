@@ -1,0 +1,37 @@
+<!--pages/PM/contacts/add/add.wxml-->
+<view class="container">
+    <view>
+        <!-- show 的值绑定到提交按钮的返回值。 -->
+        <mp-toptips msg="{{success}}" type="{{topStatus}}" show="{{show}}"></mp-toptips>
+    </view>
+    <view class="bg-fff p-lr30 border-t">
+        <form bindsubmit="formSubmit" bindreset="formReset">
+            <view>
+                <view class="ipt-wrap border-b flex-row ai-center">
+                    <view class="font14 mr40" >培训机构:</view>
+                    <input type="text" name="trorg" placeholder="请输入培训机构名称" placeholder-class="tx-left" focus="true">></input>
+                </view>
+
+                <view class="ipt-wrap border-b flex-row ai-center">
+                    <view class="font14 mr40">培训类别:</view>
+                    <radio-group bindchange="trplantypeRadio">
+                        <radio class="ml5" wx:for-items="{{trplantypeRadio}}" wx:key="name" value="{{item.name}}">
+                            <text>{{item.value}}</text>
+                        </radio>
+                    </radio-group>
+                </view>
+
+                <view class="ipt-wrap border-b flex-row ai-center">
+                    <view class="font14 mr40">方案详情:</view>
+                    <input type="text" name="trplancontent" placeholder="换行用';'" placeholder-class="tx-left"> </input>
+                </view>
+
+
+            </view>
+            <button form-type="reset" class="font16 _w100 bg-c9c9c9 color-fff combtn resetBtn" style="padding: 0 0;">清空</button>
+            <button form-type="submit" class="font16 _w100 bg-btn color-fff combtn subBtn" style="padding: 0 0;">添加</button>
+        </form>
+    </view>
+</view>
+
+

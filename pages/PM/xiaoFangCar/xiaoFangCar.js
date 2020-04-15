@@ -21,7 +21,7 @@ Page({
 
     },
     addXiaoFangCar: function () {
-       wx.navigateTo({
+       wx.redirectTo({
             url: '/pages/PM/xiaoFangCar/add/add'
         })
     },

@@ -133,7 +133,6 @@ Page({
         console.log('form发生了reset事件')
     },
     carSourceRadio: function (e) {
-        console.log("车辆来源数据",e.detail.value)
         this.setData({
             carSource: e.detail.value
         })

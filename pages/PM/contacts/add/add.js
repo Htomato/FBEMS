@@ -60,7 +60,7 @@ Page({
                   success: '添加成功',
                   topStatus: 'success'
                 })
-                wx.navigateTo({
+                wx.redirectTo({
                       url:'/pages/PM/contacts/contacts'
                     }
                 )
