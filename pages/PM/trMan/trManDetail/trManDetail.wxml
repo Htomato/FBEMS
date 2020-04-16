@@ -1,18 +1,19 @@
 <view>
-    <view>
-        姓名：{{name}}
+    <view class="flex-horizontal-center mt50 mb50">
+        <view class="flex-horizontal-center mr50 font15">
+            姓名：{{name}}
+        </view>
+        <view class="ml50 flex-horizontal-center font15">
+            单位：{{trmanCompany}}
+        </view>
     </view>
-    <view>
-        单位：{{trmanCompany}}
-    </view>
-
-   <view class="flex ai-center">
+   <view class="flex ai-center mt50">
        <block wx:for="{{trmanGrades}}" wx:key="index">
-           <view class="flex-horizontal-start">
-               <view>
+           <view class="flex-horizontal-center border-tb">
+               <view class="font18">
                    科目：{{item.type}}
                </view>
-               <view class="{{item.grade<60?'color-ff0000':'color-363636'}} p-lr30">
+               <view class="{{item.grade<60?'color-ff0000':'color-363636'}} p-lr50 font18">
                    成绩：{{item.grade}}
                </view>
            </view>

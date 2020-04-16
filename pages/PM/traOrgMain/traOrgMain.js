@@ -24,5 +24,30 @@ Page({
       }
     })
 
+  },
+  addTraOrg: function () {
+    wx.redirectTo({
+      url: '/pages/PM/traOrgMain/add/add',
+    })
+  },
+  formSubmit: function (e) {
+    let _this = this
+    var data = e.detail.value
+    const  name = data.name
+    const number = data.number
+    wx.request({
+      url: app.serverUrl + '/traorg/selector?number=' + number +'&name=' + name,
+      success(res) {
+        _this.setData({
+          traOrgList: res.data
+        })
+
+      }
+    })
+
+
+  },
+  formReset: function () {
+    this.onLoad()
   }
 })

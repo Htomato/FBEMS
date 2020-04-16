@@ -1,6 +1,16 @@
 {
   "pages": [
+    "pages/PM/traOrgReview/traOrgReview",
+    "pages/PM/traOrgMain/traOrgMain",
+
+
     "pages/service/service",
+    "pages/PM/eqExpertReview/eqExpertReview",
+    "pages/PM/eqExpert/eqExpert",
+    "pages/PM/trMan/trMan",
+    "pages/PM/trMan/trManDetail/trManDetail",
+    "pages/PM/trainingPlan/trainingPlan",
+
     "pages/PM/outCar/outCar",
     "pages/PM/vioRecord/vioRecord",
     "pages/PM/drivRev/drivRev",
@@ -19,21 +29,16 @@
     "pages/PM/xingZhengCar/xingZhengCar",
     "pages/PM/inspectors/inspectors",
     "pages/PM/eqTech/eqTech",
-    "pages/PM/traOrgReview/traOrgReview",
-    "pages/PM/traOrgMain/traOrgMain",
-    "pages/PM/eqExpertReview/eqExpertReview",
-    "pages/PM/eqExpert/eqExpert",
-    "pages/PM/trMan/trMan",
-    "pages/PM/trainingPlan/trainingPlan",
+
     "pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail",
     "pages/index/index",
     "pages/logs/logs",
     "pages/my/my",
-    "pages/PM/trMan/trManDetail/trManDetail",
     "pages/PM/headRev/headRev",
     "pages/PM/outCar/in/in",
     "pages/PM/standard/standard",
-    "pages/PM/trainingPlan/add/add"
+    "pages/PM/trainingPlan/add/add",
+    "pages/PM/eqExpert/add/add"
   ],
   "window": {
     "backgroundTextStyle": "light",

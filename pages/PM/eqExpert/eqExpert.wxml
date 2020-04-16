@@ -32,19 +32,26 @@
                 <view class="td">{{item.eqexpertName}}</view>
                 <view class="td">{{item.eqexpertDomain}}</view>
                 <view class="td" wx:if="{{item.eqexpertBefor == 1}}">合格</view>
-                <view class="td" wx:else>不合格</view>
+                <view class="td" wx:elif="{{item.eqexpertBefor == 2}}">新添加</view>
+                <view class="td" wx:else>未通过</view>
                 <view class="td" wx:if="{{item.eqexpertLast == 1}}">合格</view>
-                <view class="td" wx:else>不合格</view>
+                <view class="td" wx:elif="{{item.eqexpertLast == 2}}">新添加</view>
+                <view class="td" wx:else>未通过</view>
             </view>
             <view class="tr" wx:else>
                 <view class="td">{{item.eqexpertId}}</view>
                 <view class="td">{{item.eqexpertName}}</view>
                 <view class="td">{{item.eqexpertDomain}}</view>
                 <view class="td" wx:if="{{item.eqexpertBefor == 1}}">合格</view>
-                <view class="td" wx:else>不合格</view>
+                <view class="td" wx:elif="{{item.eqexpertBefor == 2}}">新添加</view>
+                <view class="td" wx:else>未通过</view>
                 <view class="td" wx:if="{{item.eqexpertLast == 1}}">合格</view>
-                <view class="td" wx:else>不合格</view>
+                <view class="td" wx:elif="{{item.eqexpertLast == 2}}">新添加</view>
+                <view class="td" wx:else>未通过</view>
             </view>
         </block>
+    </view>
+    <view class="addwrap" bindtap="addEqExpert">
+        <image src="/images/icon_bar/add.png"></image>
     </view>
 </view>

@@ -36,11 +36,11 @@
                 <view class="td">{{item.traorgName}}</view>
                 <view class="td color-0cf" data-id="{{item.traorgId}}"  bindtap="changeStatus" >待审核</view>
                 <view class="td flex-horizontal-center">
-                    <view class="bg-24a9e2 w100" bindtap="quaImg" data-quaImgUrl="{{item.traorgQuaimg}}">查看</view>
+                    <view class="bg-24a9e2 w100" bindtap="quaImg" data-id="{{item.traorgId}}">查看</view>
                 </view>
                 <modal title="资格证书" hidden="{{modalHidden}}" bindconfirm="modalConfirm">
                     <view>
-                        <image class="image" src="{{item.traorgQuaimg}}" mode='aspectFill'></image>
+                        <image class="image" src="{{traorgQuaimg}}" mode='aspectFill'></image>
                     </view>
                 </modal>
                 <view class="td text-over">{{item.traorgDetail}}</view>
@@ -50,11 +50,11 @@
                 <view class="td">{{item.traorgName}}</view>
                 <view class="td color-0cf" data-id="{{item.traorgId}}"  bindtap="changeStatus">待审核</view>
                 <view class="td flex-horizontal-center">
-                    <view class="bg-24a9e2 w100" bindtap="quaImg" data-quaImgUrl="{{item.traorgQuaimg}}">查看</view>
+                    <view class="bg-24a9e2 w100" bindtap="quaImg" data-id="{{item.traorgId}}">查看</view>
                 </view>
                 <modal title="资格证书" hidden="{{modalHidden}}" bindconfirm="modalConfirm">
                     <view>
-                        <image class="image" src="{{item.traorgQuaimg}}" mode='aspectFill'></image>
+                        <image class="image" src="{{traorgQuaimg}}" mode='aspectFill'></image>
                     </view>
                 </modal>
                 <view class="td text-over">{{item.traorgDetail}}</view>

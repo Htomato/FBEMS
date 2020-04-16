@@ -11,7 +11,8 @@ Page({
     //  topTips 页面初始数据
     show: false,
     success: '',
-    topStatus: ''
+    topStatus: '',
+    eqexpertQuaimage:''
   },
   /**
    * 专家资格审核至审核通过
@@ -59,8 +60,18 @@ Page({
 
   },
   quaImg: function (e) {
-    console.log(e)
-    const ImgUrl = e.currentTarget.dataset.quaimgurl
+    let _this = this
+    const id = e.currentTarget.dataset.id
+    wx.request({
+      url: app.serverUrl + '/eqExpert/one?id=' + id,
+      success(res) {
+        _this.setData({
+          eqexpertQuaimage: res.data.eqexpertQuaimage
+        })
+
+      }
+    })
+
     this.setData({
       modalHidden: false
     })
@@ -102,5 +113,25 @@ Page({
       }
     })
 
+  },
+  formSubmit: function (e) {
+    let _this = this
+    var data = e.detail.value
+    const  name = data.name
+    const number = data.number
+    wx.request({
+      url: app.serverUrl + '/eqExpert/selector?number=' + number +'&name=' + name,
+      success(res) {
+        _this.setData({
+          reviewList: res.data
+        })
+
+      }
+    })
+
+
+  },
+  formReset: function () {
+    this.onLoad()
   }
 })

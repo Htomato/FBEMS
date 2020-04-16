@@ -2,5 +2,5 @@
   "usingComponents": {
     "mp-toptips": "/components/weui-miniprogram/toptips/toptips"
   },
-  "navigationBarTitleText": "培训机构审核"
+  "navigationBarTitleText": "添加装备专家"
 }

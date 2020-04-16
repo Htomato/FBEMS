@@ -21,10 +21,26 @@ Page({
 
   },
   formSubmit: function (e) {
-    
+    let _this = this
     var data = e.detail.value
+    console.log('forSubmit',e.detail.value)
+    const  name = data.name
+    const number = data.number
+    const trplantype = this.data.trplantypeSelect
+    console.log("select",trplantype)
+    wx.request({
+      url: app.serverUrl + '/trplan/selector?number=' + number +'&name=' + name + '&trplantype=' +trplantype,
+      success(res) {
+        _this.setData({
+          trplan: res.data
+        })
+      }
+    })
+
+
   },
   formReset: function () {
+    this.onLoad()
   },
   pickerChange: function (e) {
     this.setData({

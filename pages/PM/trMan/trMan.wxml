@@ -5,12 +5,12 @@
         <form bindsubmit="formSubmit" bindreset="formReset">
             <view class="formItems">
                 <view>
-                    <text>方案编号</text>
+                    <text>人员编号</text>
                     <input type="number" name="number" placeholder="例如：001"></input>
                 </view>
                 <view>
-                    <text>培训机构</text>
-                    <input type="text" name="name" placeholder="例如：锐顿"></input>
+                    <text>姓名</text>
+                    <input type="text" name="name" placeholder="例如：张三"></input>
                 </view>
             </view>
             <view class="button">

@@ -1,1 +1,15 @@
 /* pages/PM/traOrgMain/traOrgMain.wxss */
+/*add button*/
+.addwrap {
+
+    position:fixed;
+
+    bottom:30px;
+
+    right: 20px;
+
+}
+.addwrap image{
+    width: 64px;
+    height: 64px;
+}

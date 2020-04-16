@@ -38,4 +38,7 @@
             </view>
         </block>
     </view>
+    <view class="addwrap" bindtap="addTraOrg">
+        <image src="/images/icon_bar/add.png"></image>
+    </view>
 </view>
