@@ -1,7 +1,7 @@
 const app = getApp()
 Page({
     data: {
-        fireCarList: [],
+        AdminCarList: [],
         //  topTips 页面初始数据
         show: false,
         success: '',
@@ -14,10 +14,30 @@ Page({
             success(res) {
                 console.log(res)
                 _this.setData({
-                    fireCarList: res.data
+                    AdminCarList: res.data
                 })
             }
         })
+    },
+    formSubmit: function (e) {
+        let _this = this
+        var data = e.detail.value
+        const  carLicenseplate = data.carLicenseplate
+        const headName = data.headName
+        wx.request({
+            url: app.serverUrl + '/car/selectorAdmin?carLicenseplate=' + carLicenseplate +'&headName=' + headName,
+            success(res) {
+                _this.setData({
+                    AdminCarList: res.data
+                })
+
+            }
+        })
+
+
+    },
+    formReset: function () {
+        this.onLoad()
     },
     addXingZhengCar: function () {
         wx.navigateTo({

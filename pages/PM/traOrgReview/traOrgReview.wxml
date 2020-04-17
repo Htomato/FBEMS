@@ -28,7 +28,7 @@
             <view class="th">机构名称</view>
             <view class="th">审核状态</view>
             <view class="th">资格证书</view>
-            <view class="th">专家详情</view>
+            <view class="th">机构详情</view>
         </view>
         <block wx:for="{{reviewList}}" wx:key="index">
             <view class="tr bg-g" wx:if="{{index % 2 == 0}}">

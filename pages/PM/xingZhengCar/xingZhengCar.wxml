@@ -8,11 +8,11 @@
             <view class="formItems">
                 <view>
                     <text>车牌号</text>
-                    <input type="number" name="number" placeholder="例如：豫A00001"></input>
+                    <input type="text" name="carLicenseplate" placeholder="例如：豫A00001"></input>
                 </view>
                 <view>
                     <text>负责人</text>
-                    <input type="text" name="name" placeholder="例如：张三"></input>
+                    <input type="text" name="headName" placeholder="例如：张三"></input>
                 </view>
             </view>
             <view class="button">
@@ -29,7 +29,7 @@
             <view class="th">车辆型号</view>
             <view class="th">车牌号</view>
         </view>
-        <block wx:for="{{fireCarList}}" wx:key="index">
+        <block wx:for="{{AdminCarList}}" wx:key="index">
             <view class="tr bg-g" wx:if="{{index % 2 == 0}}" data-id="{{item.carId}}"  bindtap="changeLicense">
                 <view class="td">{{item.carId}}</view>
                 <view class="td">{{item.headName}}</view>

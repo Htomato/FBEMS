@@ -20,6 +20,26 @@ Page({
         })
 
     },
+    formSubmit: function (e) {
+        let _this = this
+        var data = e.detail.value
+        const  carLicenseplate = data.carLicenseplate
+        const headName = data.headName
+        wx.request({
+            url: app.serverUrl + '/car/selectorFire?carLicenseplate=' + carLicenseplate +'&headName=' + headName,
+            success(res) {
+                _this.setData({
+                    fireCarList: res.data
+                })
+
+            }
+        })
+
+
+    },
+    formReset: function () {
+        this.onLoad()
+    },
     addXiaoFangCar: function () {
        wx.redirectTo({
             url: '/pages/PM/xiaoFangCar/add/add'

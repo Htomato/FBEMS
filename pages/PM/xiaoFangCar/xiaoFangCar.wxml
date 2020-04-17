@@ -8,11 +8,11 @@
             <view class="formItems">
                 <view>
                     <text>车牌号</text>
-                    <input type="number" name="number" placeholder="例如：豫A00001紧急"></input>
+                    <input type="text" name="carLicenseplate" placeholder="例如：豫A00001紧急"></input>
                 </view>
                 <view>
                     <text>负责人</text>
-                    <input type="text" name="name" placeholder="例如：张三"></input>
+                    <input type="text" name="headName" placeholder="例如：张三"></input>
                 </view>
             </view>
             <view class="button">
@@ -34,7 +34,7 @@
                 <view class="td">{{item.carId}}</view>
                 <view class="td">{{item.headName}}</view>
                 <view class="td">{{item.headCompany}}</view>
-                <view class="td">{{item.carBrand}}-{{item.carModel}}</view>
+                <view class="td font11">{{item.carBrand}}-{{item.carModel}}</view>
                 <view class="td font11" wx:if="{{item.carLicenseplate == null}}">新车</view>
                 <view class="td font11" wx:else>{{item.carLicenseplate}}</view>
             </view>
@@ -42,7 +42,7 @@
                 <view class="td">{{item.carId}}</view>
                 <view class="td">{{item.headName}}</view>
                 <view class="td">{{item.headCompany}}</view>
-                <view class="td">{{item.carBrand}}-{{item.carModel}}</view>
+                <view class="td font11">{{item.carBrand}}-{{item.carModel}}</view>
                 <view class="td font11" wx:if="{{item.carLicenseplate == null}}">新车</view>
                 <view class="td font11" wx:else>{{item.carLicenseplate}}</view>
             </view>

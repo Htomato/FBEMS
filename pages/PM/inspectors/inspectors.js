@@ -25,52 +25,35 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  formSubmit: function (e) {
+    let _this = this
+    var data = e.detail.value
+    console.log('forSubmit',e.detail.value)
+    const  name = data.name
+    const number = data.number
+    wx.request({
+      url: app.serverUrl + '/worker/selectorIns?number=' + number +'&name=' + name,
+      success(res) {
+        _this.setData({
+          inspectorsList: res.data
+        })
+      }
+    })
+
 
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  formReset: function () {
+    this.onLoad()
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  addEqTech: function () {
+    wx.redirectTo({
+      url: '/pages/PM/eqTech/add/add',
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  details:function (e){
+    const id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url:'/pages/PM/eqTech/detail/workDetail?id=' + id
+    })
   }
 })

@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/service/service",
     "pages/PM/traOrgReview/traOrgReview",
     "pages/PM/traOrgMain/traOrgMain",
 
 
-    "pages/service/service",
     "pages/PM/eqExpertReview/eqExpertReview",
     "pages/PM/eqExpert/eqExpert",
     "pages/PM/trMan/trMan",
@@ -38,7 +38,8 @@
     "pages/PM/outCar/in/in",
     "pages/PM/standard/standard",
     "pages/PM/trainingPlan/add/add",
-    "pages/PM/eqExpert/add/add"
+    "pages/PM/eqExpert/add/add",
+    "pages/PM/eqTech/detail/workDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

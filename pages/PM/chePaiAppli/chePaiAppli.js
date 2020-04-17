@@ -21,6 +21,25 @@ Page({
         })
 
     },
+    formSubmit: function (e) {
+        let _this = this
+        var data = e.detail.value
+        const carBrand  = data.carBrand
+        const carCompany = data.carCompany
+        wx.request({
+            url: app.serverUrl + '/car/selectorChePai?carBrand=' + carBrand +'&carCompany=' + carCompany,
+            success(res) {
+                _this.setData({
+                    newList: res.data
+                })
+            }
+        })
+
+
+    },
+    formReset: function () {
+        this.onLoad()
+    },
     changeStatus: function (e) {
         let _this = this
         const id = e.currentTarget.dataset.id

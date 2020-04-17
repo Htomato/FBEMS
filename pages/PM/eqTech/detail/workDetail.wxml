@@ -1,0 +1,41 @@
+<!--pages/PM/contacts/add/add.wxml-->
+<view class="container">
+    <view>
+        <!-- show 的值绑定到提交按钮的返回值。 -->
+        <mp-toptips msg="{{success}}" type="{{topStatus}}" show="{{show}}"></mp-toptips>
+    </view>
+    <view class="bg-fff p-lr30 border-t">
+
+            <view>
+
+                <view class="ipt-wrap border-b flex-row ai-center">
+                    <view class="font14 mr40" >姓名:</view>
+                    {{worker.workerName}}
+                </view>
+
+                <view class="ipt-wrap border-b flex-row ai-center">
+                    <view class="font14 mr40">职位:</view>
+                    {{worker.workerJob}}
+                </view>
+
+                <view class="ipt-wrap border-b flex-row ai-center">
+                    <view class="font14 mr40">单位:</view>
+                    {{worker.workerCompany}}
+                </view>
+
+                <view class="ipt-wrap border-b flex-row ai-center">
+                    <view class="font14 mr40">工龄:</view>
+                    {{worker.workerYear}}
+                </view>
+                <view class="ipt-wrap border-b flex-row ai-center">
+                    <view class="font14 mr40">简介:</view>
+                    {{worker.workerDetail}}
+                </view>
+
+            </view>
+            <button hidden="{{hidden}}" bindtap="no" data-id="{{worker.workerId}}" class="font16 _w100 bg-c9c9c9 color-fff combtn resetBtn" style="padding: 0 0;">不通过</button>
+            <button hidden="{{hidden}}" bindtap="yes" data-id="{{worker.workerId}}" class="font16 _w100 bg-btn color-fff combtn subBtn" style="padding: 0 0;">通过</button>
+        </view>
+</view>
+
+
