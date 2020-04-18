@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/PM/outCar/in/in",
+
     "pages/service/service",
     "pages/PM/traOrgReview/traOrgReview",
     "pages/PM/traOrgMain/traOrgMain",
@@ -35,7 +37,6 @@
     "pages/logs/logs",
     "pages/my/my",
     "pages/PM/headRev/headRev",
-    "pages/PM/outCar/in/in",
     "pages/PM/standard/standard",
     "pages/PM/trainingPlan/add/add",
     "pages/PM/eqExpert/add/add",

@@ -1,30 +1,26 @@
 <view class="Container">
-    <form class="formContainer">
-        <view bindsubmit="formSubmit" bindreset="formReset">
+    <view class="formContainer">
+        <form bindsubmit="formSubmit" bindreset="formReset">
             <view class="formItems">
                 <view>
                     <text>原车牌号</text>
-                    <input type="text" name="number" placeholder="例如：豫A00001"></input>
+                    <input type="text" name="carLicenseplateold" placeholder="例如：豫A00001"></input>
                 </view>
                 <view>
                     <text>现车牌号</text>
-                    <input type="text" name="number" placeholder="例如：豫A00002"></input>
+                    <input type="text" name="carLicenseplate" placeholder="例如：豫A00002"></input>
                 </view>
                 <view>
                     <text>负责人</text>
-                    <input type="text" name="name" placeholder="例如：张三"></input>
-                </view>
-                <view>
-                    <text>队别</text>
-                    <input type="text" name="name" placeholder="例如：消防一队"></input>
+                    <input type="text" name="headName" placeholder="例如：张三"></input>
                 </view>
             </view>
             <view class="button">
                 <button form-type="reset" style="background-color: #939393">清除</button>
                 <button form-type="submit" style="background-color: #8DE">查询</button>
             </view>
-        </view>
-    </form>
+        </form>
+    </view>
     <view class="table">
         <view class="tr bg-w">
             <view class="th">负责人</view>

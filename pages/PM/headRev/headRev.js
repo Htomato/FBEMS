@@ -22,7 +22,6 @@ Page({
 
     },
     changeRev: function (e) {
-        console.log(e)
         let _this = this
         const id = e.currentTarget.dataset.id
         wx.showModal({
@@ -66,13 +65,15 @@ Page({
     formSubmit: function (e) {
         let _this = this
         var data = e.detail.value
-        const  name = data.name
-        const number = data.number
+        const  carLicenseplate = data.carLicenseplate
+        const  carCompany = data.carCompany
+        const headName = data.headName
         wx.request({
-            url: app.serverUrl + '/eqExpert/selector?number=' + number +'&name=' + name,
+            url: app.serverUrl + '/car/selectorReview?carLicenseplate=' + carLicenseplate
+                +'&carCompany=' + carCompany +'&headName=' + headName,
             success(res) {
                 _this.setData({
-                    eqExpertList: res.data
+                    headRevList: res.data
                 })
 
             }

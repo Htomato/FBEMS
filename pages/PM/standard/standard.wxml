@@ -1,5 +1,7 @@
 <view class="container">
     <view class="dbg color-f00 font24 flex-horizontal-center">{{head}}</view>
     <view class="font20 mt10 p-tb5" style="white-space:pre-wrap">{{content}}</view>
+    <view class="flex-horizontal-center">
     <image src="{{image}}"></image>
+    </view>
 </view>

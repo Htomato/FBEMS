@@ -4,15 +4,15 @@
             <view class="formItems">
                 <view>
                     <text>档案编号</text>
-                    <input type="number" name="number" placeholder="例如：430101753216"></input>
+                    <input type="number" name="licenseNumber" placeholder="例如：430101753216"></input>
                 </view>
                 <view>
                     <text>驾驶员</text>
-                    <input type="text" name="name" placeholder="例如：张三"></input>
+                    <input type="text" name="driverName" placeholder="例如：张三"></input>
                 </view>
                 <view>
                     <text>所属单位</text>
-                    <input type="text" name="name" placeholder="例如：消防一队"></input>
+                    <input type="text" name="driverCompany" placeholder="例如：消防一队"></input>
                 </view>
             </view>
             <view class="button">

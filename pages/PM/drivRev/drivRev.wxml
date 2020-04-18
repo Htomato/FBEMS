@@ -4,11 +4,11 @@
             <view class="formItems">
                 <view>
                     <text>驾驶员</text>
-                    <input type="text" name="name" placeholder="例如：张三"></input>
+                    <input type="text" name="driverName" placeholder="例如：张三"></input>
                 </view>
                 <view>
                     <text>所属单位</text>
-                    <input type="text" name="name" placeholder="例如：消防一队"></input>
+                    <input type="text" name="driverCompany" placeholder="例如：消防一队"></input>
                 </view>
             </view>
             <view class="button">

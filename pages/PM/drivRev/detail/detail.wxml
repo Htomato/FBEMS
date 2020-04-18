@@ -1,33 +1,54 @@
-<view>
-    <view>
-        姓名：{{driver.driverName}}
-    </view>
-    <view>
-        年龄：{{driver.driverAge}}
-    </view>
-    <view>
-        单位：{{driver.driverCompany}}
-    </view>
-    <view>
-        驾驶证类别：{{driver.licenseType}}
-    </view>
-    <view>
-        档案编号：{{driver.licenseNumber}}
-    </view>
-    <view>
-        驾驶证有效期限：{{driver.driverLastdate}}
-    </view>
-    <view>
-        驾驶证扣分情况：
-        <block wx:if="{{driver.licenseViorecord == null}}">无</block>
-        <block wx:else>{{driver.licenseViorecord}}</block>
-    </view>
-    <view>
-        驾驶证剩余分数：{{driver.licenseScore}}
-    </view>
-    <view>
-        年审情况：
-        <block wx:if="{{driver.licenseScore>0}}">合格</block>
-        <block wx:else>不合格</block>
+<view class="container">
+    <view class="bg-fff p-lr30 border-t">
+        <view>
+            <view class="ipt-wrap border-b flex-row ai-center">
+                <view class="font14 mr40" >姓名:</view>
+                {{driver.driverName}}
+            </view>
+
+            <view class="ipt-wrap border-b flex-row ai-center">
+                <view class="font14 mr40">年龄:</view>
+                {{driver.driverAge}}
+            </view>
+
+            <view class="ipt-wrap border-b flex-row ai-center">
+                <view class="font14 mr40">单位:</view>
+                {{driver.driverCompany}}
+            </view>
+
+            <view class="ipt-wrap border-b flex-row ai-center">
+                <view class="font14 mr40">驾照类型:</view>
+                {{driver.licenseType}}
+            </view>
+
+            <view class="ipt-wrap border-b flex-row ai-center">
+                <view class="font14 mr40">档案编号:</view>
+                {{driver.licenseNumber}}
+            </view>
+
+            <view class="ipt-wrap border-b flex-row ai-center">
+                <view class="font14 mr40">驾驶证期限:</view>
+                {{driver.driverLastdate}}
+            </view>
+
+            <view class="ipt-wrap border-b flex-row ai-center">
+                <view class="font14 mr40">扣分情况:</view>
+                <block wx:if="{{driver.licenseViorecord == null}}">无</block>
+                <block wx:else><view class="color-f00">{{driver.licenseViorecord}}</view></block>
+            </view>
+
+            <view class="ipt-wrap border-b flex-row ai-center">
+                <view class="font14 mr40">剩余分数:</view>
+                {{driver.licenseScore}}
+            </view>
+
+            <view class="ipt-wrap border-b flex-row ai-center">
+                <view class="font14 mr40">年审情况:</view>
+                <block wx:if="{{driver.licenseScore>0}}"><view class="color-24a9e2">合格</view></block>
+                <block wx:else><view class="color-f00">不合格</view></block>
+            </view>
+        </view>
     </view>
 </view>
+
+

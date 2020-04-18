@@ -5,7 +5,15 @@ Page({
         //  topTips 页面初始数据
         show: false,
         success: '',
-        topStatus: ''
+        topStatus: '',
+        licenseType:'',
+        //licenseTypeRadio
+        licenseTypeRadio: [
+            {name: 'B1',value: 'B1'},
+            {name: 'B2',value: 'B2'},
+            {name: 'C1',value: 'C1'},
+            {name: 'C2',value: 'C2'}
+        ]
     },
     onLoad: function (options) {
         let _this = this
@@ -23,13 +31,16 @@ Page({
     formSubmit: function (e) {
         let _this = this
         var data = e.detail.value
-        const  name = data.name
-        const number = data.number
+        const driverName = data.driverName
+        const licenseType = _this.data.licenseType
+        console.log(licenseType)
+        const driverCompany = data.driverCompany
         wx.request({
-            url: app.serverUrl + '/eqExpert/selector?number=' + number +'&name=' + name,
+            url: app.serverUrl + '/driver/selectorAppli?driverName=' + driverName
+                +'&licenseType=' + licenseType +'&driverCompany=' + driverCompany,
             success(res) {
                 _this.setData({
-                    eqExpertList: res.data
+                    applyList: res.data
                 })
 
             }
@@ -39,6 +50,14 @@ Page({
     },
     formReset: function () {
         this.onLoad()
+        this.setData({
+            licenseType:''
+        })
+    },
+    licenseTypeRadio: function (e) {
+        this.setData({
+            licenseType:e.detail.value
+        })
     },
     changeApply:function (e) {
         console.log(e)

@@ -20,13 +20,15 @@ Page({
     formSubmit: function (e) {
         let _this = this
         var data = e.detail.value
-        const  name = data.name
-        const number = data.number
+        const licenseNumber = data.licenseNumber
+        const driverName = data.driverName
+        const  driverCompany = data.driverCompany
         wx.request({
-            url: app.serverUrl + '/eqExpert/selector?number=' + number +'&name=' + name,
+            url: app.serverUrl + '/driver/selectorFileAppli?licenseNumber=' + licenseNumber
+                +'&driverName=' + driverName +'&driverCompany=' + driverCompany,
             success(res) {
                 _this.setData({
-                    eqExpertList: res.data
+                    applyFileList: res.data
                 })
 
             }

@@ -9,15 +9,15 @@
             <view class="formItems">
                 <view>
                     <text>车牌号</text>
-                    <input type="number" name="number" placeholder="例如：豫A00001"></input>
+                    <input type="text" name="carLicenseplate" placeholder="例如：豫A00001"></input>
                 </view>
                 <view>
                     <text>负责人</text>
-                    <input type="text" name="name" placeholder="例如：张三"></input>
+                    <input type="text" name="headName" placeholder="例如：张三"></input>
                 </view>
                 <view>
                     <text>队别</text>
-                    <input type="text" name="name" placeholder="例如：消防总队"></input>
+                    <input type="text" name="carCompany" placeholder="例如：消防总队"></input>
                 </view>
             </view>
             <view class="button">
@@ -34,12 +34,13 @@
             <view class="th">车牌号</view>
             <view class="th">车况</view>
         </view>
-        <block wx:for="{{revCarList}}" wx:key="index">
+        <block wx:for="{{headRevList}}" wx:key="index">
             <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
                 <view class="td">{{item.headName}}</view>
                 <view class="td">{{item.carCompany}}</view>
                 <view class="td">{{item.carBrand}}-{{item.carModel}}</view>
-                <view class="td font11">{{item.carLicenseplate}}</view>
+                <view class="td font11" wx:if="{{item.carLicenseplate === null}}">未上牌</view>
+                <view class="td font11" wx:else>{{item.carLicenseplate}}</view>
                 <view class="td color-0cf" wx:if="{{item.review == 0}}" data-id="{{item.carId}}"  bindtap="changeRev">
                     未审查
                 </view>
@@ -49,7 +50,8 @@
                 <view class="td">{{item.headName}}</view>
                 <view class="td">{{item.carCompany}}</view>
                 <view class="td">{{item.carBrand}}-{{item.carModel}}</view>
-                <view class="td">{{item.carLicenseplate}}</view>
+                <view class="td font11" wx:if="{{item.carLicenseplate === null}}">未上牌</view>
+                <view class="td font11" wx:else>{{item.carLicenseplate}}</view>
                 <view class="td color-0cf" wx:if="{{item.review == 0}}" data-id="{{item.carId}}"  bindtap="changeRev">
                     未审查
                 </view>

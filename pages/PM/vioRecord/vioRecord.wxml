@@ -3,16 +3,20 @@
         <form bindsubmit="formSubmit" bindreset="formReset">
             <view class="formItems">
                 <view>
-                    <text>牌照类型</text>
-                    <input type="number" name="licenseType" placeholder="例如：C1"></input>
-                </view>
-                <view>
                     <text>驾驶员</text>
-                    <input type="text" name="driver" placeholder="例如：张三"></input>
+                    <input type="text" name="driverName" placeholder="例如：张三"></input>
+                </view>
+                <view class="ipt-wrap flex-row ai-center">
+                    <text class="font14 mr40">驾照类型:</text>
+                    <radio-group bindchange="licenseTypeRadio" class="flex-vertical-center">
+                        <radio class="ml5" wx:for-items="{{licenseTypeRadio}}" wx:key="name" value="{{item.name}}">
+                            <view class="as-center">{{item.value}}</view>
+                        </radio>
+                    </radio-group>
                 </view>
                 <view>
                     <text>队别</text>
-                    <input type="text" name="company" placeholder="例如：消防一队"></input>
+                    <input type="text" name="driverCompany" placeholder="例如：消防一队"></input>
                 </view>
             </view>
             <view class="button">

@@ -1,15 +1,19 @@
 <!--pages/PM/eqExpert/eqExpert.wxml-->
 <view class="Container">
+    <view>
+        <!-- show 的值绑定到提交按钮的返回值。 -->
+        <mp-toptips msg="{{success}}" type="{{topStatus}}" show="{{show}}"></mp-toptips>
+    </view>
     <view class="formContainer">
         <form bindsubmit="formSubmit" bindreset="formReset">
             <view class="formItems">
                 <view>
                     <text>驾驶员</text>
-                    <input type="number" name="number" placeholder="例如：张三"></input>
+                    <input type="text" name="outcarDriver" placeholder="例如：张三"></input>
                 </view>
                 <view>
                     <text>车牌号</text>
-                    <input type="text" name="name" placeholder="例如：豫A00001"></input>
+                    <input type="text" name="outcarLicense" placeholder="例如：豫A00001"></input>
                 </view>
             </view>
             <view class="button">
@@ -26,13 +30,13 @@
             <view class="th">进入时间</view>
         </view>
         <block wx:for="{{inList}}" wx:key="index">
-            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}" bindtap="out" data-id="{{item.outcarId}}">
                 <view class="td">{{item.outcarDriver}}</view>
                 <view class="td">{{item.outcarLicense}}</view>
                 <view class="td">{{item.outcarModel}}</view>
                 <view class="td">{{item.outcarIntime}}</view>
             </view>
-            <view class="tr" wx:else>
+            <view class="tr" wx:else bindtap="out" data-id="{{item.outcarId}}">
                 <view class="td">{{item.outcarDriver}}</view>
                 <view class="td">{{item.outcarLicense}}</view>
                 <view class="td">{{item.outcarModel}}</view>

@@ -20,13 +20,16 @@ Page({
     formSubmit: function (e) {
         let _this = this
         var data = e.detail.value
-        const  name = data.name
-        const number = data.number
+        console.log(data)
+        const carLicenseplateold = data.carLicenseplateold
+        const carLicenseplate = data.carLicenseplate
+        const headName = data.headName
         wx.request({
-            url: app.serverUrl + '/eqExpert/selector?number=' + number +'&name=' + name,
+            url: app.serverUrl + '/car/selectorChFile?carLicenseplateold=' + carLicenseplateold +'&carLicenseplate=' + carLicenseplate +'&headName=' + headName,
             success(res) {
+                console.log(res)
                 _this.setData({
-                    eqExpertList: res.data
+                    changeList: res.data
                 })
 
             }
