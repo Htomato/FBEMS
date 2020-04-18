@@ -1,18 +1,18 @@
 <view class="Container">
-    <view>
-        <!-- show 的值绑定到提交按钮的返回值。 -->
-        <mp-toptips msg="{{success}}" type="{{topStatus}}" show="{{show}}"></mp-toptips>
-    </view>
     <view class="formContainer">
         <form bindsubmit="formSubmit" bindreset="formReset">
             <view class="formItems">
                 <view>
-                    <text>车牌号</text>
-                    <input type="text" name="carLicenseplate" placeholder="例如：豫A00001紧急"></input>
+                    <text>下级单位</text>
+                    <input type="text" name="carCompany" placeholder="例如：消防一队"></input>
                 </view>
-                <view>
-                    <text>负责人</text>
-                    <input type="text" name="headName" placeholder="例如：张三"></input>
+                <view class="ipt-wrap flex-row ai-center">
+                    <text class="font14 mr40">车辆类别:</text>
+                    <radio-group bindchange="carCategoryRadio">
+                        <radio class="ml5" wx:for-items="{{carCategoryRadio}}" wx:key="name" value="{{item.name}}">
+                            <view>{{item.value}}</view>
+                        </radio>
+                    </radio-group>
                 </view>
             </view>
             <view class="button">
@@ -27,24 +27,22 @@
             <view class="th">负责人</view>
             <view class="th">所属队别</view>
             <view class="th">车辆型号</view>
-            <view class="th">车牌号</view>
+            <view class="th">车辆类别</view>
         </view>
-        <block wx:for="{{fireCarList}}" wx:key="index">
-            <view class="tr bg-g" wx:if="{{index % 2 == 0}}" data-id="{{item.carId}}"  bindtap="changeLicense">
+        <block wx:for="{{underList}}" wx:key="index">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
                 <view class="td">{{item.carId}}</view>
                 <view class="td">{{item.headName}}</view>
                 <view class="td">{{item.headCompany}}</view>
                 <view class="td font11">{{item.carBrand}}-{{item.carModel}}</view>
-                <view class="td font11" wx:if="{{item.carLicenseplate == null}}">新车</view>
-                <view class="td font11" wx:else>{{item.carLicenseplate}}</view>
+                <view class="td font11">{{item.carCategory}}</view>
             </view>
-            <view class="tr" wx:else data-id="{{item.carId}}"  bindtap="changeLicense">
+            <view class="tr" wx:else>
                 <view class="td">{{item.carId}}</view>
                 <view class="td">{{item.headName}}</view>
                 <view class="td">{{item.headCompany}}</view>
                 <view class="td font11">{{item.carBrand}}-{{item.carModel}}</view>
-                <view class="td font11" wx:if="{{item.carLicenseplate == null}}">新车</view>
-                <view class="td font11" wx:else>{{item.carLicenseplate}}</view>
+                <view class="td font11">{{item.carCategory}}</view>
             </view>
         </block>
     </view>

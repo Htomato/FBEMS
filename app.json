@@ -1,18 +1,16 @@
 {
   "pages": [
-    "pages/PM/outCar/in/in",
-
     "pages/service/service",
+    "pages/PM/underDrivAppli/underDrivAppli",
+    "pages/PM/underCarAppli/underCarAppli",
+    "pages/PM/outCar/in/in",
     "pages/PM/traOrgReview/traOrgReview",
     "pages/PM/traOrgMain/traOrgMain",
-
-
     "pages/PM/eqExpertReview/eqExpertReview",
     "pages/PM/eqExpert/eqExpert",
     "pages/PM/trMan/trMan",
     "pages/PM/trMan/trManDetail/trManDetail",
     "pages/PM/trainingPlan/trainingPlan",
-
     "pages/PM/outCar/outCar",
     "pages/PM/vioRecord/vioRecord",
     "pages/PM/drivRev/drivRev",
@@ -31,7 +29,6 @@
     "pages/PM/xingZhengCar/xingZhengCar",
     "pages/PM/inspectors/inspectors",
     "pages/PM/eqTech/eqTech",
-
     "pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail",
     "pages/index/index",
     "pages/logs/logs",

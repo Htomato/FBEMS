@@ -1,7 +1,7 @@
 const app = getApp()
 Page({
     data: {
-        perInfoList: [],
+        underList: [],
         licenseType:'',
         //licenseTypeRadio
         licenseTypeRadio: [
@@ -14,29 +14,26 @@ Page({
     onLoad: function (options) {
         let _this = this
         wx.request({
-            url: app.serverUrl + '/driver/all',
+            url: app.serverUrl + '/driver/under',
             success(res) {
-                console.log(res)
                 _this.setData({
-                    perInfoList: res.data
+                    underList: res.data
                 })
 
             }
         })
+
     },
     formSubmit: function (e) {
         let _this = this
         var data = e.detail.value
-        const driverName = data.driverName
-        const licenseType = _this.data.licenseType
-        console.log(licenseType)
         const driverCompany = data.driverCompany
+        const licenseType = _this.data.licenseType
         wx.request({
-            url: app.serverUrl + '/driver/selectorPerson?driverName=' + driverName
-                +'&licenseType=' + licenseType +'&driverCompany=' + driverCompany,
+            url: app.serverUrl + '/driver/selectorUnder?licenseType=' + licenseType +'&driverCompany=' + driverCompany,
             success(res) {
                 _this.setData({
-                    perInfoList: res.data
+                    underList: res.data
                 })
 
             }
@@ -46,19 +43,10 @@ Page({
     },
     formReset: function () {
         this.onLoad()
-        this.setData({
-            licenseType:''
-        })
     },
     licenseTypeRadio: function (e) {
         this.setData({
             licenseType:e.detail.value
         })
-    },
-    addPerson: function () {
-        wx.redirectTo({
-            url: '/pages/PM/perInfo/add/add'
-        })
     }
-
-})
+});

@@ -2,12 +2,8 @@
     <view class="formContainer">
         <form bindsubmit="formSubmit" bindreset="formReset">
             <view class="formItems">
-                <view>
-                    <text>姓名</text>
-                    <input type="text" name="driverName" placeholder="例如：张三"></input>
-                </view>
                 <view class="ipt-wrap flex-row ai-center">
-                    <text class="font14 mr40">驾照类型:</text>
+                    <text class="font14 mr20">驾照类型:</text>
                     <radio-group bindchange="licenseTypeRadio" class="flex-vertical-center">
                         <radio class="ml5" wx:for-items="{{licenseTypeRadio}}" wx:key="name" value="{{item.name}}">
                             <view class="as-center">{{item.value}}</view>
@@ -15,7 +11,7 @@
                     </radio-group>
                 </view>
                 <view>
-                    <text>队别</text>
+                    <text>下级单位</text>
                     <input type="text" name="driverCompany" placeholder="例如：消防一队"></input>
                 </view>
             </view>
@@ -31,17 +27,13 @@
             <view class="th">年龄</view>
             <view class="th">所属队别</view>
             <view class="th">驾驶证类型</view>
-            <view class="th">驾驶证状态</view>
         </view>
-        <block wx:for="{{perInfoList}}" wx:key="index">
+        <block wx:for="{{underList}}" wx:key="index">
             <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
                 <view class="td">{{item.driverName}}</view>
                 <view class="td">{{item.driverAge}}</view>
                 <view class="td">{{item.driverCompany}}</view>
                 <view class="td">{{item.licenseType}}</view>
-                <view class="td color-279efd" wx:if="{{item.licenseStatus == 1}}">正常</view>
-                <view class="td color-66ded0" wx:elif="{{item.licenseStatus == 0}}">申请中</view>
-                <view class="td color-eb3324" wx:else>吊销</view>
 
             </view>
             <view class="tr" wx:else>
@@ -49,14 +41,7 @@
                 <view class="td">{{item.driverAge}}</view>
                 <view class="td">{{item.driverCompany}}</view>
                 <view class="td">{{item.licenseType}}</view>
-                <view class="td color-279efd" wx:if="{{item.licenseStatus == 1}}">正常</view>
-                <view class="td color-66ded0" wx:elif="{{item.licenseStatus == 0}}">申请中</view>
-                <view class="td color-eb3324" wx:else>吊销</view>
             </view>
         </block>
-    </view>
-    <!--添加按钮-->
-    <view class="addwrap" bindtap="addPerson">
-        <image src="/images/icon_bar/add.png"></image>
     </view>
 </view>
