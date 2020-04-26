@@ -17,7 +17,9 @@
             data-id="{{item.contactId}}">
           <view class="flex-horizontal-start ai-center w280">
               <image src="{{item.avatar}}" class="avatar"></image>
-              <text class="contact_name ai-center">{{item.contactName}}</text>
+              <text class="contact_name ai-center"
+                catchtap="change"
+                data-id="{{item.contactId}}">{{item.contactName}}</text>
           </view>
           <view class="flex-horizontal-start ai-center w200">
               <text class="key">职务：</text>

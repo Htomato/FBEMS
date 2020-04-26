@@ -37,7 +37,8 @@
     "pages/PM/standard/standard",
     "pages/PM/trainingPlan/add/add",
     "pages/PM/eqExpert/add/add",
-    "pages/PM/eqTech/detail/workDetail"
+    "pages/PM/eqTech/detail/workDetail",
+    "pages/PM/contacts/change/change"
   ],
   "window": {
     "backgroundTextStyle": "light",

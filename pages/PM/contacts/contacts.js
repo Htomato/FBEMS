@@ -75,6 +75,12 @@ Page({
     })
 
   },
+  change:function(e){
+    const id = e.currentTarget.dataset.id
+    wx.redirectTo({
+      url: '/pages/PM/contacts/change/change?id=' + id,
+    }) 
+  },
 
 
   search: function (value) {
