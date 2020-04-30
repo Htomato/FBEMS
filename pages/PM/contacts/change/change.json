@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mp-toptips": "/components/weui-miniprogram/toptips/toptips"
+  },
+  "navigationBarTitleText": "修改联系人"
+}

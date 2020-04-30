@@ -1,6 +1,9 @@
 {
   "usingComponents": {
     "mp-searchbar": "/components/weui-miniprogram/searchbar/searchbar",
+    "mp-cells": "/components/weui-miniprogram/cells/cells",
+    "mp-cell": "/components/weui-miniprogram/cell/cell",
+    "mp-slideview": "/components/weui-miniprogram/slideview/slideview",
     "mp-toptips": "/components/weui-miniprogram/toptips/toptips"
   },
   "navigationBarTitleText": "通讯录"

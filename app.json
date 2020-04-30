@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/PM/contacts/contacts",
+    "pages/PM/contacts/add/add",
+
     "pages/service/service",
     "pages/PM/underDrivAppli/underDrivAppli",
     "pages/PM/underCarAppli/underCarAppli",
@@ -23,9 +26,8 @@
     "pages/PM/linceFile/linceFile",
     "pages/PM/chePaiAppli/chePaiAppli",
     "pages/PM/xiaoFangCar/add/add",
-    "pages/PM/contacts/add/add",
     "pages/PM/xiaoFangCar/xiaoFangCar",
-    "pages/PM/contacts/contacts",
+
     "pages/PM/xingZhengCar/xingZhengCar",
     "pages/PM/inspectors/inspectors",
     "pages/PM/eqTech/eqTech",
@@ -38,7 +40,8 @@
     "pages/PM/trainingPlan/add/add",
     "pages/PM/eqExpert/add/add",
     "pages/PM/eqTech/detail/workDetail",
-    "pages/PM/contacts/change/change"
+    "pages/PM/contacts/change/change",
+    "pages/PM/trMan/add/add"
   ],
   "window": {
     "backgroundTextStyle": "light",

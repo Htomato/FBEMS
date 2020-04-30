@@ -1,5 +1,6 @@
 // pages/PM/contacts/contacts.js
 const app = getApp()
+var base64 = require("../../../components/weui-miniprogram/images/base64");
 Page({
 
   /**
@@ -32,48 +33,6 @@ Page({
         phoneNumber:teleNum
       })
     }
-  },
-  //长摁事件
-  delete: function (e){
-    let _this = this
-    console.log("长摁事件")
-    const id = e.currentTarget.dataset.id
-    wx.showModal({
-      title: "提醒",
-      content: "是否删除联系人？",
-      cancelText: "否",
-      confirmText: "是",
-      success(res) {
-        console.log(res)
-        if (res.confirm) {
-          wx.request({
-            url: app.serverUrl + '/contacts/delete?id=' + id,
-            success(res) {
-              console.log("服务器res",res)
-              if (res.data === 1) {
-                _this.setData({
-                  show: true,
-                  success: '删除成功',
-                  topStatus: 'success'
-                })
-                //刷新页面
-                _this.onLoad()
-              } else {
-                _this.setData({
-                  show: true,
-                  success: '删除失败',
-                  topStatus: 'error'
-                })
-              }
-            }
-          })
-        } else if (res.cancel) {
-          console.log("用户点击了取消")
-        }
-      }
-
-    })
-
   },
   change:function(e){
     const id = e.currentTarget.dataset.id
@@ -117,7 +76,14 @@ Page({
   onLoad: function (options) {
     let _this = this
     _this.setData({
-      search: this.search.bind(this)
+      search: this.search.bind(this),
+      icon: base64.icon20,
+      slideButtons: [{
+        type: 'warn',
+        text: '删除',
+        extClass: 'test',
+        src: '/page/weui/cell/icon_del.svg', // icon的路径
+      }],
     })
     wx.request({
       url: app.serverUrl + '/contacts/allContacts',
@@ -132,5 +98,45 @@ Page({
   },
   hideInput:function () {
     this.onLoad()
+  },
+  slideButtonTap(e) {
+    console.log('slide button tap', e.detail)
+    let _this = this
+    const id = e.currentTarget.dataset.id
+    wx.showModal({
+      title: "提醒",
+      content: "是否删除联系人？",
+      cancelText: "否",
+      confirmText: "是",
+      success(res) {
+        console.log(res)
+        if (res.confirm) {
+          wx.request({
+            url: app.serverUrl + '/contacts/delete?id=' + id,
+            success(res) {
+              console.log("服务器res",res)
+              if (res.data === 1) {
+                _this.setData({
+                  show: true,
+                  success: '删除成功',
+                  topStatus: 'success'
+                })
+                //刷新页面
+                _this.onLoad()
+              } else {
+                _this.setData({
+                  show: true,
+                  success: '删除失败',
+                  topStatus: 'error'
+                })
+              }
+            }
+          })
+        } else if (res.cancel) {
+          console.log("用户点击了取消")
+        }
+      }
+
+    })
   }
 })

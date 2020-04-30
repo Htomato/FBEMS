@@ -1,0 +1,45 @@
+<!--pages/PM/contacts/add/add.wxml-->
+<view class="container">
+  <view>
+    <!-- show 的值绑定到提交按钮的返回值。 -->
+    <mp-toptips msg="{{success}}" type="{{topStatus}}" show="{{show}}"></mp-toptips>
+  </view>
+  <view class="bg-fff p-lr30 border-t">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view>
+        <view hidden="true">
+        <input type="number" name="contactId" value="{{contacts.contactId}}"></input>
+        </view>
+
+
+        <view class="ipt-wrap border-b flex-row ai-center">
+          <view class="font14 mr40" >姓名:</view>
+          <input type="text" name="contactName" value="{{contacts.contactName}}" focus="true"></input>
+        </view>
+
+        <view class="ipt-wrap border-b flex-row ai-center">
+          <view class="font14 mr40">电话:</view>
+          <input type="number" name="contactTele" value="{{contacts.contactTele}}"> </input>
+        </view>
+        <view class="ipt-wrap border-b flex-row ai-center">
+          <view class="font14 mr40">单位:</view>
+          <input type="text" name="company" value="{{contacts.company}}"> </input>
+        </view>
+
+        <view class="ipt-wrap border-b flex-row ai-center">
+          <view class="font14 mr40 ">职务:</view>
+          <input type="text" name="job" value="{{contacts.job}}"></input>
+        </view>
+
+        <view class="ipt-wrap border-b flex-row ai-center">
+          <view class="font14 mr40 ">头像:</view>
+          <image src="{{contacts.avatar}}" class="avatar" bindtap="changeAvatar"></image>
+        </view>
+      </view>
+      <button form-type="reset" class="font16 _w100 bg-c9c9c9 color-fff combtn resetBtn" style="padding: 0 0;">重置</button>
+      <button form-type="submit" class="font16 _w100 bg-btn color-fff combtn subBtn" style="padding: 0 0;">修改</button>
+    </form>
+  </view>
+</view>
+
+

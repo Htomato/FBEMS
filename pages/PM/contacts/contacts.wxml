@@ -8,29 +8,29 @@
         <mp-searchbar bindselectresult="selectResult" bindhideInput="hideInput" search="{{search}}"></mp-searchbar>
     </view>
   <block wx:for="{{contacts}}" wx:key="index">
-      <view class="contact"
+      <mp-slideview class="contact"
+                    buttons="{{slideButtons}}"
+                    bindbuttontap="slideButtonTap"
             bind:touchstart="touchstart"
             bind:touchend="touchend"
-            bind:longtap="delete"
+            bind:longtap="change"
             bindtap="call"
             data-teleNum="{{item.contactTele}}"
             data-id="{{item.contactId}}">
-          <view class="flex-horizontal-start ai-center w280">
+          <view class="flex-row">
               <image src="{{item.avatar}}" class="avatar"></image>
-              <text class="contact_name ai-center"
-                catchtap="change"
-                data-id="{{item.contactId}}">{{item.contactName}}</text>
-          </view>
-          <view class="flex-horizontal-start ai-center w200">
-              <text class="key">职务：</text>
-              <text class="value">{{item.job}}</text>
-          </view>
-          <view class="flex-horizontal-start ai-center w200">
-              <text class="key">单位：</text>
-              <text class="value">{{item.company}}</text>
-          </view>
+              <text class=" flex-horizontal-start contact_name ai-center">{{item.contactName}}</text>
+              <view class="flex-horizontal-start ai-center w200 m-lr10">
+                  <text class="key">单位：</text>
+                  <text class="value">{{item.company}}</text>
+              </view>
+              <view class="flex-horizontal-start ai-center w200">
+                  <text class="key">单位：</text>
+                  <text class="value">{{item.company}}</text>
+              </view>
 
-      </view>
+          </view>
+      </mp-slideview>
   </block>
 
   <view class="addwrap" bindtap="addContact">
