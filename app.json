@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/service/service",
     "pages/PM/contacts/contacts",
     "pages/PM/contacts/add/add",
 
-    "pages/service/service",
     "pages/PM/underDrivAppli/underDrivAppli",
     "pages/PM/underCarAppli/underCarAppli",
     "pages/PM/outCar/in/in",
@@ -41,7 +41,8 @@
     "pages/PM/eqExpert/add/add",
     "pages/PM/eqTech/detail/workDetail",
     "pages/PM/contacts/change/change",
-    "pages/PM/trMan/add/add"
+    "pages/PM/trMan/add/add",
+    "pages/PM/eqExpertReview/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

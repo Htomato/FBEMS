@@ -31,33 +31,33 @@
             <view class="th">专家详情</view>
         </view>
         <block wx:for="{{reviewList}}" wx:key="index">
-            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}" >
                 <view class="td">{{item.eqexpertId}}</view>
                 <view class="td">{{item.eqexpertName}}</view>
-                <view class="td color-0cf" data-id="{{item.eqexpertId}}"  bindtap="changeStatus" >待审核</view>
+                <view class="td color-0cf" data-id="{{item.eqexpertId}}"  catch:tap="changeStatus" >待审核</view>
                 <view class="td flex-horizontal-center">
-                    <view class="bg-24a9e2 w100" bindtap="quaImg" data-id="{{item.eqexpertId}}">查看</view>
+                    <view class="bg-24a9e2 w100" catch:tap="quaImg" data-id="{{item.eqexpertId}}">查看</view>
                 </view>
-                <modal title="资格证书" hidden="{{modalHidden}}" bindconfirm="modalConfirm">
+                <modal title="资格证书" hidden="{{modalHidden}}" catch:confirm="modalConfirm">
                     <view>
                         <image class="image" src="{{eqexpertQuaimage}}" mode='aspectFill'></image>
                     </view>
                 </modal>
-                <view class="td text-over">{{item.eqexpertDetail}}</view>
+                <view class="td text-over" bindtap="detail" data-id="{{item.eqexpertId}}">{{item.eqexpertDetail}}</view>
             </view>
-            <view class="tr" wx:else>
+            <view class="tr" wx:else >
                 <view class="td">{{item.eqexpertId}}</view>
                 <view class="td">{{item.eqexpertName}}</view>
-                <view class="td color-0cf" data-id="{{item.eqexpertId}}"  bindtap="changeStatus" >待审核</view>
+                <view class="td color-0cf" data-id="{{item.eqexpertId}}"  catch:tap="changeStatus" >待审核</view>
                 <view class="td flex-horizontal-center">
-                    <view class="bg-24a9e2 w100" bindtap="quaImg" data-id="{{item.eqexpertId}}">查看</view>
+                    <view class="bg-24a9e2 w100" catch:tap="quaImg" data-id="{{item.eqexpertId}}">查看</view>
                 </view>
-                <modal title="资格证书" hidden="{{modalHidden}}" bindconfirm="modalConfirm">
+                <modal title="资格证书" hidden="{{modalHidden}}" catch:confirm="modalConfirm">
                     <view>
                         <image class="image" src="{{eqexpertQuaimage}}" mode='aspectFill'></image>
                     </view>
                 </modal>
-                <view class="td text-over">{{item.eqexpertDetail}}</view>
+                <view class="td text-over" bindtap="detail" data-id="{{item.eqexpertId}}">{{item.eqexpertDetail}}</view>
             </view>
         </block>
     </view>

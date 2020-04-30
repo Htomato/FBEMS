@@ -49,5 +49,11 @@ Page({
   },
   formReset: function () {
     this.onLoad()
+  },
+  detail:function (e) {
+    const id =  e.currentTarget.dataset.id
+    wx.navigateTo({
+      url:'/pages/PM/traOrgReview/detail/detail?id='+id
+    })
   }
 })

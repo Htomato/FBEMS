@@ -1,0 +1,65 @@
+<!--pages/PM/contacts/add/add.wxml-->
+<view class="page bg-fff">
+  <view class="weui-form">
+    <view class="weui-form__text-area">
+      <h2 class="weui-form__title">机构详情</h2>
+    </view>
+    <view class="weui-cells__group weui-cells__group_form">
+      <view class="weui-cells weui-cells_form">
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <label class="weui-label">机构名称:</label>
+          </view>
+          <view class="weui-cell-bd">
+            <view>{{traorg.traorgName}}</view>
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_active">
+          <view class="weui-cell__hd">
+            <label class="weui-label">负责人:</label>
+          </view>
+          <view class="weui-cell__bd ml20">
+            <view>{{traorg.traorgHead}}</view>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_active">
+          <view class="weui-cell__hd">
+            <label class="weui-label">联系方式:</label>
+          </view>
+          <view class="weui-cell__bd">
+            <view>{{traorg.traorgHeadtele}}</view>
+          </view>
+        </view>
+
+
+        <view class="weui-cell weui-cell_active">
+          <view class="weui-cell__hd">
+            <label class="weui-label">类别:</label>
+          </view>
+          <view class="weui-cell-bd ml40">
+            <view>{{traorg.traorgType}}</view>
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_active">
+          <view class="weui-cell__hd">
+            <label class="weui-label">详情:</label>
+          </view>
+          <view class="weui-cell__bd">
+            <textarea class="weui-textarea" rows="1">{{traorg.traorgDetail}}</textarea>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_active">
+          <view class="weui-cell__hd">
+            <label class="weui-label">资质:</label>
+          </view>
+          <view class="weui-cell__bd">
+            <image src="{{traorg.traorgQuaimg}}" class="avatar"></image>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

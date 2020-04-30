@@ -133,5 +133,11 @@ Page({
   },
   formReset: function () {
     this.onLoad()
+  },
+  detail:function (e) {
+    const id =  e.currentTarget.dataset.id
+    wx.navigateTo({
+      url:'/pages/PM/eqExpertReview/detail/detail?id='+id
+    })
   }
 })

@@ -26,12 +26,12 @@
             <view class="th">类别</view>
         </view>
         <block wx:for="{{traOrgList}}" wx:key="index">
-            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}" bindtap="detail" data-id="{{item.traorgId}}">
                 <view class="td">{{item.traorgId}}</view>
                 <view class="td">{{item.traorgName}}</view>
                 <view class="td">{{item.traorgType}}</view>
             </view>
-            <view class="tr" wx:else>
+            <view class="tr" wx:else bindtap="detail" data-id="{{item.traorgId}}">
                 <view class="td">{{item.traorgId}}</view>
                 <view class="td">{{item.traorgName}}</view>
                 <view class="td">{{item.traorgType}}</view>

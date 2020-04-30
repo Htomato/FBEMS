@@ -135,5 +135,12 @@ Page({
   },
   formReset: function () {
     this.onLoad()
+  },
+  detail:function (e) {
+    let _this = this
+    const id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '/pages/PM/traOrgReview/detail/detail?id=' + id
+    })
   }
 })

@@ -26,16 +26,16 @@
             <view class="th">2020审核</view>
         </view>
         <block wx:for="{{eqTechList}}" wx:key="index">
-            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}" bindtap="details" data-id="{{item.workerId}}">
                 <view class="td">{{item.workerId}}</view>
-                <view class="td color-0cf" bindtap="details" data-id="{{item.workerId}}">{{item.workerName}}</view>
+                <view class="td">{{item.workerName}}</view>
                 <view class="td">{{item.workerCompany}}</view>
                 <view class="td" wx:if="{{item.workerStatus == 1}}">通过</view>
                 <view class="td" wx:else>未通过</view>
             </view>
-            <view class="tr" wx:else>
+            <view class="tr" wx:else bindtap="details" data-id="{{item.workerId}}">
                 <view class="td">{{item.workerId}}</view>
-                <view class="td color-0cf" bindtap="details" data-id="{{item.workerId}}">{{item.workerName}}</view>
+                <view class="td">{{item.workerName}}</view>
                 <view class="td">{{item.workerCompany}}</view>
                 <view class="td" wx:if="{{item.workerStatus == 1}}">通过</view>
                 <view class="td" wx:else>未通过</view>

@@ -89,7 +89,7 @@ icon {
 }
 
 .weui-cell_active {
-  background-color: #ececec;
+  background-color: #fff;
 }
 
 .weui-cell_primary {
@@ -821,7 +821,7 @@ button.weui-vcode-btn {
 .weui-cells__group_form .weui-cells__tips {
   margin-top: 8px;
   padding: 0 32px;
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0);
 }
 
 .weui-cells__group_form .weui-cells__tips a {

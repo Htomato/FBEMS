@@ -32,7 +32,9 @@
                     </radio-group>                </view>
                 <view class="ipt-wrap border-b flex-row ai-center">
                     <view class="font14 mr40 ">详细介绍:</view>
-                    <input type="text" name="traorgDetail" placeholder="请输入培训机构详细信息" placeholder-class="tx-left"></input>
+                    <view class="weui-cell__bd">
+                        <textarea class="weui-textarea" name="traorgDetail" placeholder="请输入培训机构详细信息" rows="3"></textarea>
+                    </view>
                 </view>
                 <view>
                     <button bindtap="quaImgUpload">上传机构资格证书</button>

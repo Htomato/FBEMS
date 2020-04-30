@@ -27,7 +27,7 @@
             <view class="th">2020审核</view>
         </view>
         <block wx:for="{{eqExpertList}}" wx:key="index">
-            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}" bindtap="details" data-id="{{item.eqexpertId}}">
                 <view class="td">{{item.eqexpertId}}</view>
                 <view class="td">{{item.eqexpertName}}</view>
                 <view class="td">{{item.eqexpertDomain}}</view>
@@ -38,7 +38,7 @@
                 <view class="td" wx:elif="{{item.eqexpertLast == 2}}">新添加</view>
                 <view class="td" wx:else>未通过</view>
             </view>
-            <view class="tr" wx:else>
+            <view class="tr" wx:else bindtap="details" data-id="{{item.eqexpertId}}">
                 <view class="td">{{item.eqexpertId}}</view>
                 <view class="td">{{item.eqexpertName}}</view>
                 <view class="td">{{item.eqexpertDomain}}</view>
