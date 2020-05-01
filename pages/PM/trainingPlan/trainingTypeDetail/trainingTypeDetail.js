@@ -5,9 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-   title: '',
-   content: '',
-   trorg:''
+    title: '',
+    content: '',
+    trorg:'',
+    goal:''
   },
 
   /**
@@ -15,11 +16,12 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-    const contents = options.content.split(';').join(' \n')
+    const contents = options.content.split(';').join('\n').split('。').join('。\n')
     this.setData({
       title: options.title,
       content: contents,
-      trorg: options.trorg
+      trorg: options.trorg,
+      goal: options.goal
     })
   },
 

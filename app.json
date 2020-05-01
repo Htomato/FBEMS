@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/service/service",
+    "pages/PM/trainingPlan/trainingPlan",
+    "pages/PM/trMan/trMan",
+    "pages/PM/trMan/add/add",
     "pages/PM/contacts/contacts",
     "pages/PM/contacts/add/add",
 
@@ -11,9 +14,9 @@
     "pages/PM/traOrgMain/traOrgMain",
     "pages/PM/eqExpertReview/eqExpertReview",
     "pages/PM/eqExpert/eqExpert",
-    "pages/PM/trMan/trMan",
+
     "pages/PM/trMan/trManDetail/trManDetail",
-    "pages/PM/trainingPlan/trainingPlan",
+
     "pages/PM/outCar/outCar",
     "pages/PM/vioRecord/vioRecord",
     "pages/PM/drivRev/drivRev",
@@ -41,7 +44,7 @@
     "pages/PM/eqExpert/add/add",
     "pages/PM/eqTech/detail/workDetail",
     "pages/PM/contacts/change/change",
-    "pages/PM/trMan/add/add",
+
     "pages/PM/eqExpertReview/detail/detail"
   ],
   "window": {

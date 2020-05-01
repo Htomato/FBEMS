@@ -47,7 +47,7 @@
             <label class="weui-label">详情:</label>
           </view>
           <view class="weui-cell__bd">
-            <textarea class="weui-textarea" rows="1">{{traorg.traorgDetail}}</textarea>
+            <textarea class="weui-textarea" rows="1" value="{{traorg.traorgDetail}}" disabled></textarea>
           </view>
         </view>
         <view class="weui-cell weui-cell_active">

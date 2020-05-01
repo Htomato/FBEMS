@@ -1,41 +1,53 @@
-<!--pages/PM/contacts/add/add.wxml-->
-<view class="container">
-    <view>
-        <!-- show 的值绑定到提交按钮的返回值。 -->
-        <mp-toptips msg="{{success}}" type="{{topStatus}}" show="{{show}}"></mp-toptips>
-    </view>
-    <view class="bg-fff p-lr30 border-t">
-
-            <view>
-
-                <view class="ipt-wrap border-b flex-row ai-center">
-                    <view class="font14 mr40" >姓名:</view>
-                    {{worker.workerName}}
+<view class="page bg-fff">
+    <view class="weui-form">
+        <view class="weui-form__text-area">
+            <h2 class="weui-form__title">{{worker.workerJob}}</h2>
+        </view>
+        <view class="weui-cells__group weui-cells__group_form">
+            <view class="weui-cells weui-cells_form">
+                <view class="weui-cell">
+                    <view class="weui-cell__hd">
+                        <label class="weui-label">姓名:</label>
+                    </view>
+                    <view class="weui-cell-bd">
+                        <view>{{worker.workerName}}</view>
+                    </view>
                 </view>
 
-                <view class="ipt-wrap border-b flex-row ai-center">
-                    <view class="font14 mr40">职位:</view>
-                    {{worker.workerJob}}
+                <view class="weui-cell weui-cell_active">
+                    <view class="weui-cell__hd">
+                        <label class="weui-label">单位:</label>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <view>{{worker.workerCompany}}</view>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_active">
+                    <view class="weui-cell__hd">
+                        <label class="weui-label">工龄:</label>
+                    </view>
+                    <view class="weui-cell-bd">
+                        <view>{{worker.workerYear}}</view>
+                    </view>
                 </view>
 
-                <view class="ipt-wrap border-b flex-row ai-center">
-                    <view class="font14 mr40">单位:</view>
-                    {{worker.workerCompany}}
-                </view>
 
-                <view class="ipt-wrap border-b flex-row ai-center">
-                    <view class="font14 mr40">工龄:</view>
-                    {{worker.workerYear}}
-                </view>
-                <view class="ipt-wrap border-b flex-row ai-center">
-                    <view class="font14 mr40">简介:</view>
-                    {{worker.workerDetail}}
+
+
+                <view class="weui-cell weui-cell_active">
+                    <view class="weui-cell__hd">
+                        <label class="weui-label">详情:</label>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <textarea class="weui-textarea" disabled value="{{worker.workerDetail}}"></textarea>
+                    </view>
                 </view>
 
             </view>
-            <button hidden="{{hidden}}" bindtap="no" data-id="{{worker.workerId}}" class="font16 _w100 bg-c9c9c9 color-fff combtn resetBtn" style="padding: 0 0;">不通过</button>
-            <button hidden="{{hidden}}" bindtap="yes" data-id="{{worker.workerId}}" class="font16 _w100 bg-btn color-fff combtn subBtn" style="padding: 0 0;">通过</button>
         </view>
+    </view>
+    <view wx:if="{{worker.workerStatus != 1}}">
+        <button class="font16 _w100 bg-btn color-fff combtn" bindtap="changeStatus" data-id="{{worker.workerId}}">通过审核</button>
+    </view>
 </view>
-
 

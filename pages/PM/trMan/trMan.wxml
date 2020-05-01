@@ -23,12 +23,17 @@
         <view class="tr bg-w">
             <view class="th">编号</view>
             <view class="th">姓名</view>
-            <view class="th">培训1</view>
-            <view class="th">培训2</view>
+            <view class="th">体能</view>
+            <view class="th">战术</view>
             <view class="th">详情</view>
         </view>
         <block wx:for="{{trmen}}" wx:key="index">
-            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}"
+                  bind:touchstart="touchstart"
+                  bind:touchend="touchend"
+                  bind:longtap="delete"
+                  data-id="{{item.trmanId}}"
+            >
                 <view class="td">{{item.trmanId}}</view>
                 <view class="td">{{item.trmanName}}</view>
                 <view class="td">{{item.trmanGrades[0].type}}:{{item.trmanGrades[0].grade}}</view>
@@ -40,7 +45,11 @@
                     </view>
                 </view>
             </view>
-            <view class="tr" wx:else>
+            <view class="tr" wx:else
+                  bind:touchstart="touchstart"
+                  bind:touchend="touchend"
+                  bind:longtap="delete"
+                  data-id="{{item.trmanId}}">
                 <view class="td">{{item.trmanId}}</view>
                 <view class="td">{{item.trmanName}}</view>
                 <view class="td">{{item.trmanGrades[0].type}}:{{item.trmanGrades[0].grade}}</view>
@@ -53,5 +62,8 @@
                 </view>
             </view>
         </block>
+    </view>
+    <view class="addwrap" bindtap="add">
+        <image src="/images/icon_bar/add.png"></image>
     </view>
 </view>

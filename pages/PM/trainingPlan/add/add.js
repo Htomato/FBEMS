@@ -23,6 +23,7 @@ Page({
         // console.log('form发生了submit事件，携带数据为：', data,"数据类型",dataType)
         const trorg = data.trorg
         const trplancontent = data.trplancontent
+        const trplangoal = data.trplangoal
         const trplantype = _this.data.trplantype
         if(trorg === ''){
             wx.showToast({
@@ -32,6 +33,11 @@ Page({
         } else if (trplantype === '') {
             wx.showToast({
                 title: '培训类别不能为空',
+                icon: 'none'
+            })
+        }else if (trplangoal === '') {
+            wx.showToast({
+                title: '培训目的不能为空',
                 icon: 'none'
             })
         }else if (trplancontent === '') {
@@ -46,7 +52,8 @@ Page({
                     data:{
                         trorg,
                         trplancontent,
-                        trplantype
+                        trplantype,
+                        trplangoal
                     }
                 },
 

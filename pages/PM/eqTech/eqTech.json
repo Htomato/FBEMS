@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "mp-toptips": "/components/weui-miniprogram/toptips/toptips"
+  },
   "navigationBarTitleText": "装备技师"
 }

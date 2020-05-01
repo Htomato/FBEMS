@@ -1,37 +1,64 @@
-<!--pages/PM/contacts/add/add.wxml-->
-<view class="container">
+<view class="page bg-fff">
     <view>
         <!-- show 的值绑定到提交按钮的返回值。 -->
         <mp-toptips msg="{{success}}" type="{{topStatus}}" show="{{show}}"></mp-toptips>
     </view>
-    <view class="bg-fff p-lr30 border-t">
-        <form bindsubmit="formSubmit" bindreset="formReset">
-            <view>
-                <view class="ipt-wrap border-b flex-row ai-center">
-                    <view class="font14 mr40" >培训机构:</view>
-                    <input type="text" name="trorg" placeholder="请输入培训机构名称" placeholder-class="tx-left" focus="true">></input>
+    <view class="weui-form">
+        <view class="weui-form__text-area">
+            <h2 class="weui-form__title mb20">培训方案</h2>
+        </view>
+        <view>
+            <form bindsubmit="formSubmit" bindreset="formReset">
+                <view class="weui-cells__group weui-cells__group_form">
+                    <view class="weui-cells weui-cells_form">
+                        <view class="weui-cell">
+                            <view class="weui-cell__hd">
+                                <label class="weui-label" >培训机构:</label>
+                            </view>
+                            <view class="weui-cell-bd">
+                                <input class="weui-input" type="text" name="trorg" placeholder="请输入培训机构名称" placeholder-class="weui-input__placeholder" focus="true"></input>
+                            </view>
+                        </view>
+
+                        <view class="weui-cell weui-cell_active">
+                            <view class="weui-cell__hd">
+                                <label class="weui-label">培训类别:</label>
+                            </view>
+                            <view class="weui-cell__bd">
+                                <radio-group bindchange="trplantypeRadio">
+                                    <radio class="ml5" wx:for-items="{{trplantypeRadio}}" wx:key="name" value="{{item.name}}">
+                                        <text>{{item.value}}</text>
+                                    </radio>
+                                </radio-group>
+                            </view>
+                        </view>
+                        <view class="weui-cell weui-cell_active">
+                            <view class="weui-cell__hd">
+                                <label class="weui-label">训练目的:</label>
+                            </view>
+                            <view class="weui-cell__bd">
+                                <textarea class="weui-textarea" name="trplangoal" placeholder="请输入方案信息" rows="3"></textarea>
+                            </view>
+                        </view>
+
+                        <view class="weui-cell weui-cell_active">
+                            <view class="weui-cell__hd">
+                                <label class="weui-label">场地器材:</label>
+                            </view>
+                            <view class="weui-cell__bd">
+                                <textarea class="weui-textarea" name="trplancontent" placeholder="请输入方案信息" rows="3"></textarea>
+                            </view>
+                        </view>
+                    </view>
+                    <button form-type="reset" class="font16 _w100 bg-c9c9c9 color-fff combtn resetBtn" style="padding: 0 0;">清空</button>
+                    <button form-type="submit" class="font16 _w100 bg-btn color-fff combtn subBtn" style="padding: 0 0;">添加</button>
                 </view>
-
-                <view class="ipt-wrap border-b flex-row ai-center">
-                    <view class="font14 mr40">培训类别:</view>
-                    <radio-group bindchange="trplantypeRadio">
-                        <radio class="ml5" wx:for-items="{{trplantypeRadio}}" wx:key="name" value="{{item.name}}">
-                            <text>{{item.value}}</text>
-                        </radio>
-                    </radio-group>
-                </view>
-
-                <view class="ipt-wrap border-b flex-row ai-center">
-                    <view class="font14 mr40">方案详情:</view>
-                    <input type="text" name="trplancontent" placeholder="换行用';'" placeholder-class="tx-left"> </input>
-                </view>
-
-
-            </view>
-            <button form-type="reset" class="font16 _w100 bg-c9c9c9 color-fff combtn resetBtn" style="padding: 0 0;">清空</button>
-            <button form-type="submit" class="font16 _w100 bg-btn color-fff combtn subBtn" style="padding: 0 0;">添加</button>
-        </form>
+            </form>
+        </view>
     </view>
 </view>
+
+
+
 
 

@@ -1,10 +1,29 @@
 <!--pages/PM/trainingPlan/trainingTypeDetail/trainingTypeDetail.wxml-->
-<view class="container">
-    <view class="dbg color-f00 font24 flex-horizontal-center">{{title}}训练</view>
-    <view>
-        <view class="color-a5a5a5 font14 flex-horizontal-center">培训机构：{{trorg}}</view>
+<view class="page bg-fff">
+    <view class="weui-form">
+        <view class="weui-form__text-area">
+            <h2 class="weui-form__title">{{title}}训练</h2>
+        </view>
+        <view class="weui-cells__group weui-cells__group_form">
+            <view class="weui-flex flex-center">
+                <view class="weui-cells__title">培训机构：{{trorg}}</view>
+            </view>
+
+            <view class="weui-article__section">
+                <view class="weui-article__h2">训练目的</view>
+                    <view class="weui-article__p">
+                        {{goal}}
+                    </view>
+            </view>
+            <view class="weui-article__section">
+                    <view class="weui-article__h2">场地器材</view>
+                    <view class="weui-article__p" style="white-space:pre-line">
+                        {{content}}
+                    </view>
+            </view>
+        </view>
     </view>
-    <view class="font20 mt10 p-tb5" style="white-space:pre-wrap">{{content}}</view>
 </view>
+
 
 

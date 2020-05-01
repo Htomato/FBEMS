@@ -48,7 +48,7 @@
             <label class="weui-label">详情:</label>
           </view>
           <view class="weui-cell__bd">
-            <textarea class="weui-textarea" rows="3">{{eqExpert.eqexpertDetail}}</textarea>
+            <textarea class="weui-textarea" rows="3" value="{{eqExpert.eqexpertDetail}}" disabled></textarea>
           </view>
         </view>
         <view class="weui-cell weui-cell_active">
