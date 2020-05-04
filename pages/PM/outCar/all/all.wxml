@@ -1,5 +1,5 @@
 <!--pages/PM/eqExpert/eqExpert.wxml-->
-<view class="Container">
+<view class="">
     <view class="formContainer">
         <form bindsubmit="formSubmit" bindreset="formReset">
             <view class="formItems">
@@ -19,36 +19,40 @@
         </form>
     </view>
     <view class="flex-center">
-        <view class="cell _w50">
-            <a class="weui-btn_cell weui-btn_cell-default">队内车辆</a>
+        <view class="cell _w50 bg-f1f1f1" bindtap="in">
+            <a class="weui-btn_cell weui-btn_cell-default bg-f1f1f1">队内车辆</a>
         </view>
-        <view class="cell _w50 bg-f1f1f1" bindtap="all">
-            <a class="weui-btn_cell weui-btn_cell-primary bg-f1f1f1">车辆记录</a>
+        <view class="cell _w50">
+            <a class="weui-btn_cell weui-btn_cell-primary">车辆记录</a>
         </view>
     </view>
+
     <view class="table">
         <view class="tr bg-w">
             <view class="th">驾驶员</view>
             <view class="th">车牌号</view>
             <view class="th">车型</view>
             <view class="th">进入时间</view>
+            <view class="th">放行时间</view>
         </view>
-        <block wx:for="{{inList}}" wx:key="index">
-            <view class="tr bg-g" wx:if="{{index % 2 == 0}}" bindtap="out" data-id="{{item.outcarId}}">
+        <block wx:for="{{allList}}" wx:key="index">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
                 <view class="td">{{item.outcarDriver}}</view>
                 <view class="td">{{item.outcarLicense}}</view>
                 <view class="td">{{item.outcarModel}}</view>
                 <view class="td">{{item.outcarIntime}}</view>
+                <view class="td" wx:if="{{item.outcarOuttime === null}}">在队内</view>
+                <view class="td" wx:else>{{item.outcarOuttime}}</view>
+
             </view>
             <view class="tr" wx:else bindtap="out" data-id="{{item.outcarId}}">
                 <view class="td">{{item.outcarDriver}}</view>
                 <view class="td">{{item.outcarLicense}}</view>
                 <view class="td">{{item.outcarModel}}</view>
                 <view class="td">{{item.outcarIntime}}</view>
+                <view class="td" wx:if="{{item.outcarOuttime === null}}">在队内</view>
+                <view class="td" wx:else>{{item.outcarOuttime}}</view>
             </view>
         </block>
-    </view>
-    <view class="addwrap" bindtap="add">
-        <image src="/images/icon_bar/add.png"></image>
     </view>
 </view>

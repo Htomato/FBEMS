@@ -30,7 +30,7 @@
             <view class="th">车牌号</view>
         </view>
         <block wx:for="{{fireCarList}}" wx:key="index">
-            <view class="tr bg-g" wx:if="{{index % 2 == 0}}" data-id="{{item.carId}}"  bindtap="changeLicense">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}" data-id="{{item.carId}}" data-license="{{item.carLicenseplate}}" bindtap="changeLicense">
                 <view class="td">{{item.carId}}</view>
                 <view class="td">{{item.headName}}</view>
                 <view class="td">{{item.headCompany}}</view>
@@ -38,7 +38,7 @@
                 <view class="td font11" wx:if="{{item.carLicenseplate == null}}">新车</view>
                 <view class="td font11" wx:else>{{item.carLicenseplate}}</view>
             </view>
-            <view class="tr" wx:else data-id="{{item.carId}}"  bindtap="changeLicense">
+            <view class="tr" wx:else data-id="{{item.carId}}" data-license="{{item.carLicenseplate}}" bindtap="changeLicense">
                 <view class="td">{{item.carId}}</view>
                 <view class="td">{{item.headName}}</view>
                 <view class="td">{{item.headCompany}}</view>

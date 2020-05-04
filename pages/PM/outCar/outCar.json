@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "mp-toptips": "/components/weui-miniprogram/toptips/toptips"
   },
-  "navigationBarTitleText": "非消防机构车辆"
+  "navigationBarTitleText": "队内外来车辆"
 }

@@ -1,0 +1,25 @@
+.ipt-wrap{
+    min-height: 100rpx;
+    line-height: 100rpx;
+}
+.b0-fixed{
+    bottom: 0;
+    position: fixed;
+}
+
+.combtn{
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+    margin: 0 auto;
+    border-radius: 5rpx;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+}
+.resetBtn{
+    transform: translateX(-100%);
+}
+.subBtn{
+    transform: translateX(0);
+}
